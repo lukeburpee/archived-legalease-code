@@ -1,0 +1,72 @@
+version: "2"
+services:
+  master:
+    image: legalease/cluster-member
+    hostname: master
+    command: start-spark master
+    build:
+      context: .
+      dockerfile: cluster-member
+    volumes:
+      - ./conf/master:/conf
+    volumes_from:
+      - packages
+      - source
+      - mongo-one
+      - mongo-two
+      - mongo-three
+    ports:
+      - "8080:8080"
+  cluster-worker-one:
+    image: legalease/cluster-member
+    command: start-spark worker master
+    environment:
+      - SPARK_WORKER_CORES:1
+      - SPARK_WORKER_MEMORY:1g
+    depends_on:
+      - master
+    volumes:
+      - ./conf/worker:/conf
+    volumes_from:
+      - packages
+      - source
+      - mongo-one
+      - mongo-two
+      - mongo-three
+  packages:
+    image: legalease/packages
+    build:
+      context: .
+      dockerfile: packages
+  source:
+    image: busybox
+    volumes:
+      - ./source-files:/usr/src/app/source-files
+      - ./static-data:/usr/src/app/static-data
+      - ./pst-extract:/usr/src/app/pst-extract
+      - ./tmp:/usr/src/app/tmp
+  mongo-one:
+    image: legalease/mongo
+    build:
+      context: .
+      dockerfile: mongo
+  mongo-two:
+    image: legalease/mongo
+  mongo-three:
+    image: legalease/mongo
+  mongo-config:
+    image: burpee/mongo-setup
+    build: 
+      context: .
+      dockerfile: mongo-setup
+    depends_on:
+      - mongo-one
+      - mongo-two
+      - mongo-three
+    environment:
+      DATABASE: app
+      REPLICA_SET_ID: appRS
+      PRIMARY_MEMBER: mongo-one
+      SECONDARY_MEMBER: mongo-two
+      TERTIARY_MEMBER: mongo-three
+

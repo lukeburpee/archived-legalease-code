@@ -1,0 +1,1 @@
+2016-09-20 01:28:03,787 INFO  [org.apache.catalina.core.AprLifecycleListener] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib

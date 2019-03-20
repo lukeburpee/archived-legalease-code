@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "legalease-144018",
+  "private_key_id": "1dbb622179c65cd46461f35536e2c17743f51dd0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC+BLzxV3JfZTm8\n5YeRyqHFE97SLWJos2G+vqMhV/DoqtEu5eRuskMIKP3CAialowpM9O0EvxezUmFU\ng+Fo0k1LZtHt64DEof6JXdHUhx0zzAxSBNYKpgxpsxkh8bWqOOj6aRzMhW4180nT\nBMinLPOr6ZB2YfG97DZ51czlzCxrSNq9QuCWmcPXuVFfqec5s4kScIVO6cZtIZjl\nd2sS2/uIdfJaKV/e/W7isBIo7lBDrNAEMKTXKpPi6lirth3dBASFR59SnkBXQxVn\nQDj6449oHrKgxB7aOlVrlXPlbAiLgaTRpPpktFSVR0WoubWn8C2jSjSv8NCYJIgR\nSoEAuN0XAgMBAAECggEBAJISelzc6GNFIZmAqTL+HlWt7MCNevUZ0K4dRrI/NEbn\n6V6wA2bFSppfSJN3q9Xw+94k+n+HluSXE5MwvnsiD6FDLWZEf/you09F/CPwqhZD\nacUzSodtFmW69DsP4KM2lILLgwQGHq8Ck2HQb590Au3I4vDeYkOp7kbCgHy28/6T\n8TDV5uJ0PoujQtpo7aKgCMp13dReY7qP9YQJOcoOTOa6ijLa7LQboDwP+IULauZN\npeMHYGUTs8kUTwi7Jvpxus7IIODoEmHziWxLyDQ0d3+w0IcHdUv6FbWFpzog5nId\ngIb/A1iMmwDJ9PmbEHY8SDV15kibsSQWsOHWKtjj0IECgYEA+fhHgYYqk79mr6Qu\neiS7G+dKdHEJiVmMCWW/PinCEXIvz2UVY8iKTStxOL5L3Lb0NWqHvsNRvmrSxszo\nmh5XAPBNc9XFb/eUwOd4xaMfnzohw6/a6HtZgbas9WDJGI5zt72Jo9tkW6cUbgPq\nWijYES5Ah89IrEsyoT82xuKHoCcCgYEAwpo4vEuq1pT9iVVOjA9u8pKXlR0RHvg1\nEyrtgBYUxv/6zjFbnTaKxL+ZJxNBZbMC+Vq5uzA4kA2v/YeDjTAmT3RcM5zVoF/5\n4huhDZfjlig2x1kEtg72Hpu1MFOxJF9UHfV6grS6W8QzgQ8sW0QqrSAbZoSnR3wz\n35UA8VjhAZECgYEA2omFemehsaoUTFpth7u1GaAMJ+DrRXlURKL/n4lCcZ4yzk7B\ndItO3kiso78686u/tTN9mfmI7cDWpZdfg94ikl+EV1D9W/ZHxp6Xp7IFY1+fRUXp\nTHcKuazLaXtEVIO2B11diDO2eaqI4eXqbQhoXhzhrdo63uafTPnHGfnSOOECgYAK\nhr8U6F7oVozUVen2x4rv0iAi77ySWUi9ra/FIuyiywvtBVx4R5AADoEhTPhXoPRD\nOrYbOwOEP0lKxH7IL1eTKq8mF5CyqR5iLa5rhtDHuYslA1qu4mZLx45oe850Mjfh\nmvqygUYnWpiSnZh/o1NPpBH3XKuTwVMo/+1aIL2jEQKBgBiUfdk0SlMHZQUZ7qCP\nNog5eXpu23/9a+NKroQ4hLcq3Je55eOdhptnjLyHu/shSLqHWHnNe/RpygX8P1Ua\nYaNhASyNYqs6cwW+QNyFX7/Dc1+KOfj4BdPMkZrzQNzs7ieViqWo1fTZNAVNGu0N\nnCK0ELA99hEmLOuQUjWEKsHE\n-----END PRIVATE KEY-----\n",
+  "client_email": "legalease@legalease-144018.iam.gserviceaccount.com",
+  "client_id": "102259029496140235489",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/legalease%40legalease-144018.iam.gserviceaccount.com"
+}

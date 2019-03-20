@@ -1,0 +1,7 @@
+FROM node:alpine
+
+WORKDIR /usr/src/app
+
+COPY config/package.json /usr/src/app/
+
+CMD npm run storybook -c storybook

@@ -1,0 +1,19 @@
+FROM node:alpine
+
+MAINTAINER legalease.software@gmail.com
+
+
+
+ADD ["config/package.json", "scripts/setup/worker-setup.sh", "servers/worker-server.js", "scripts/setup/wait-for-it.sh", "/usr/src/app/"]
+
+RUN apk add --no-cache bash curl \
+	&& cd /usr/src/app \
+	&& ls /usr/src/app \
+    && chmod +x ./worker-setup.sh \
+    && chmod +x ./wait-for-it.sh \
+    && apk del curl \
+    && rm -rf /var/cache/apk/*
+
+WORKDIR /usr/src/app
+
+CMD ["./worker-setup.sh"]

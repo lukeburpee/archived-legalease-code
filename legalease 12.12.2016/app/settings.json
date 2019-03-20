@@ -1,0 +1,12 @@
+{
+	"ROOT_URL": "http://localhost:3000",
+	"MONGO_URL": "mongodb://mongo1:27017,mongo2:27017,mongo3:27017/app?replicaSet=appRS",
+	"MONGO_OPLOG_URL":"mongodb://mongo1:27017,mongo2:27017,mongo3:27017/local?replicaSet=appRS",
+	"DATA_MONGO_URL": "mongodb://mongo1:27017,mongo2:27017,mongo3:27017/app?replicaSet=appRS",
+	"SEARCH_ELASTIC_URL": "http://elastic1:9200",
+	"BATCH_COUNT": "100",
+	"UNOCONV_SERVER": "http://unoconv:3121/document",
+	"TIKA_SERVER": "http://tika:9998",
+	"CORENLP_SERVER": "http://corenlp:9000",
+	"REDIS_SERVER": "http://redis:6379"
+}

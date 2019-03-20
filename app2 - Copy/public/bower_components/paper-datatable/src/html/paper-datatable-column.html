@@ -1,0 +1,20 @@
+<script src="../whenever.js/whenever.js"></script>
+<dom-module id="paper-datatable-column">
+	<template>
+    <link inline rel="stylesheet" type="text/css" href="../../paper-datatable-column.css">
+		<template id="arrayTemplate">
+			<template is="dom-repeat" items="{{value}}" as="arrayItem">
+				<div class="array-item">{{_pdt_getArrayItemLabel(column, arrayItem)}}</div>
+			</template>
+		</template>
+		<template id="editableInputTemplate">
+			<paper-input type="[[_pdt_getCorrectTypeForInput(column.type)]]" value="{{value}}" step="any" no-label-float></paper-input>
+		</template>
+		<template id="editableBooleanTemplate">
+			<paper-checkbox checked="{{value}}"></paper-checkbox>
+		</template>
+	</template>
+
+  <script inline src="../../paper-datatable-column.js"></script>
+
+</dom-module>

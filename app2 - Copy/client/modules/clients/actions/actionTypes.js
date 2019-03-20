@@ -1,0 +1,6 @@
+export const CLIENT_CREATE = 'CLIENT_CREATE';
+export const CLIENT_EDIT = 'CLIENT_EDIT';
+export const CLIENT_SAVING = 'CLIENT_SAVING';
+export const CLIENT_SAVED = 'CLIENT_SAVED';
+export const CLIENT_SAVE_ERROR = 'CLIENT_SAVE_ERROR';
+export const CLIENT_SAVE_RESET = 'CLIENT_SAVE_RESET';

@@ -1,0 +1,40 @@
+FROM burpee/alpine:v3.5.1
+
+MAINTAINER legalease.software@gmail.com
+
+ENV LIBPST_VERSION=0.6.66 \
+	FETCH_PACKAGES='wget' \
+	BUILD_PACKAGES='make g++ gcc libgsf-dev' \
+	BASE_PACKAGES='nodejs libgsf zip'
+
+ADD [ \
+	"config/package.json", \
+	"servers/read-email/reademail-server.js", \
+	"servers/read-email/reademail-routes.js", \
+	"scripts/shell/read-email/explode_psts.sh", \
+	"scripts/shell/read-email/explode_psts_eml.sh", \
+	"/usr/src/app/" \
+]
+
+RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories \
+    && apk add --update --no-cache \
+    	$FETCH_PACKAGES \
+    	$BUILD_PACKAGES \
+    	$BASE_PACKAGES \
+    && update-ca-certificates \
+	&& mkdir /tmp/libpst \
+	&& cd /tmp/libpst \
+	&& wget http://www.five-ten-sg.com/libpst/packages/libpst-$LIBPST_VERSION.tar.gz \
+	&& tar --strip-components=1 -xzf libpst-$LIBPST_VERSION.tar.gz \
+	&& ./configure --enable-python=no \
+	&& make \
+	&& make install \
+	&& cd / \
+	&& rm -rf /tmp/libpst \
+	&& cd /usr/src/app \
+	&& chmod +x ./explode_psts.sh \
+	&& apk del $FETCH_PACKAGES $BUILD_PACKAGES
+
+WORKDIR /usr/src/app
+
+CMD node readpst-server.js

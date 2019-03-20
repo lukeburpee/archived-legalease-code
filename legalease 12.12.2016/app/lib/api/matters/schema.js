@@ -1,0 +1,21 @@
+export default new SimpleSchema({
+  name: { type: String },
+  court: { type: String, optional:true },
+  roles: { type: Array, optional:true},
+  'roles.$':{type: String, optional:true},
+  description: { type: String, optional:true },
+  keywords: { type: Array, optional:true },
+  'keywords.$': { type: String, optional:true},
+  client: { type: String, optional:true },
+  firms: { type: Array, optional:true},
+  'firms.$': {type: String, optional: true},
+  vendors: { type:Array, optional:true},
+  'vendors.$': {type:String, optional:true},
+  users: { type:Array, optional:true},
+  'users.$':{type:String, optional:true},
+  type: { type: String, optional:true},
+  stage: { type: String, optional:true},
+  isolateMatterDatabase: { type: Boolean, optional:true},
+  externalDatabase: { type: Boolean, optional:true},
+  databaseUrl:{type:String, optional:true}
+});

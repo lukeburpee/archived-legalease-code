@@ -1,0 +1,6 @@
+import { TOGGLE_SECONDARY_OPEN, TOGGLE_SECONDARY_CLOSE } from './actionTypes';
+
+export default {
+	TOGGLE_SECONDARY_OPEN,
+	TOGGLE_SECONDARY_CLOSE
+}

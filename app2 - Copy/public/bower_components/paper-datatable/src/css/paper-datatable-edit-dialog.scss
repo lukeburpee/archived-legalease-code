@@ -1,0 +1,21 @@
+:host{
+  position: absolute;
+  z-index: 10;
+  display: none;
+}
+:host([visible]){
+  display: block;
+}
+paper-material {
+  position:absolute;
+  left:0px;
+  top:0px;
+  right:0px;
+  min-width: 100px;
+  display: inline-block;
+  padding: 4px 24px;
+  background: var(--paper-datatable-edit-dialog-color, --paper-grey-50);
+  border-radius: 2px;
+  box-sizing: border-box;
+  @apply(--paper-datatable-edit-dialog);
+}

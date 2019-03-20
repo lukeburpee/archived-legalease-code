@@ -1,0 +1,7 @@
+FROM busybox
+
+ADD source-files /usr/src/app/source-files
+
+RUN ls /usr/src/app/source-files
+
+CMD /bin/true

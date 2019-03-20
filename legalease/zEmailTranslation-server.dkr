@@ -1,0 +1,49 @@
+FROM burpee/alpine:v3.5.1
+
+MAINTAINER legalease.software@gmail.com
+
+ENV LIBPST_VERSION=0.6.66 \
+	FETCH_PACKAGES='wget curl' \
+	BUILD_PACKAGES='make g++ gcc libgsf-dev' \
+	BASE_PACKAGES='sudo nodejs libgsf zip' \
+	PIP_PACKAGES='python-dateutil'
+
+ADD [ \
+	"config/package.json", \
+	"servers/email-normalization/email-normalization-server.js", \
+	"servers/email-normalization/email-normalization-routes.js", \
+	"/usr/src/app/" \
+]
+ADD scripts/shell/email-normalization /usr/src/app/
+ADD scripts/python/file-normalization /usr/src/app/scripts
+
+RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories \
+    && apk add --update --no-cache \
+    	$FETCH_PACKAGES \
+    	$BASE_PACKAGES \
+    	$BUILD_PACKAGES \
+    && update-ca-certificates \
+    && curl -fSL 'https://bootstrap.pypa.io/get-pip.py' | python \
+    && sudo pip install --no-cache-dir $PIP_PACKAGES \
+    && find /usr/local -depth \
+        \( \
+            \( -type d -a -name test -o -name tests \) \
+            -o \
+            \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
+        \) -exec rm -rf '{}' + \
+	&& mkdir /tmp/libpst \
+	&& cd /tmp/libpst \
+	&& wget http://www.five-ten-sg.com/libpst/packages/libpst-$LIBPST_VERSION.tar.gz \
+	&& tar --strip-components=1 -xzf libpst-$LIBPST_VERSION.tar.gz \
+	&& ./configure --enable-python=no \
+	&& make \
+	&& make install \
+	&& cd / \
+	&& rm -rf /tmp/libpst \
+	&& cd /usr/src/app \
+	&& chmod +x ./explode_psts.sh \
+	&& apk del $FETCH_PACKAGES $BUILD_PACKAGES
+
+WORKDIR /usr/src/app
+
+CMD node email-normalization-server.js

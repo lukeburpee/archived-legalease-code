@@ -1,0 +1,16 @@
+FROM burpee/alpine:v3.5.1
+
+VOLUME /data/db
+EXPOSE 27017 28017
+    
+ADD ["mongo-setup.sh", "wait-for-it.sh", "/"]
+
+RUN echo http://dl-4.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories \
+	&& apk add --no-cache mongodb bash curl \
+	&& rm /usr/bin/mongosniff /usr/bin/mongoperf \
+	&& chmod +x /mongo-setup.sh \
+	&& chmod +x /wait-for-it.sh \
+	&& apk del curl \
+	&& rm -rf /var/cache/apk/*
+
+ENTRYPOINT ["/mongo-setup.sh"]

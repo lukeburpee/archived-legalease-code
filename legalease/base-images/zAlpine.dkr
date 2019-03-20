@@ -1,0 +1,9 @@
+FROM scratch 
+
+ENV RELEASE="v3.5.1" \
+	MIRROR="http://d1-cdn.alpinelinux.org/alpine" \
+	PACKAGES="alpine-baselayout alpine-keys apk-tools libc-utils" \
+	BUILD_OPTIONS="-b -s -t UTC -r $RELEASE -m $MIRROR -p $PACKAGES" \
+	TAGS="alpine:3.5.1"
+
+ADD alpine-minirootfs-3.5.1-x86_64.tar.gz /

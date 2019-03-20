@@ -1,0 +1,5 @@
+node_modules
+.meteor/dev_bundle
+.meteor/local
+.meteor/local/dev_bundle
+C:\Users\lukeb\Desktop\webapp\images\app\.meteor\local\dev_bundle

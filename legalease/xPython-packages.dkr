@@ -1,0 +1,16 @@
+FROM alpine:3.5
+
+ENV DIRECTORY_PATH='/usr/src/app/python' \
+	BASE_PACKAGES=' ca-certificates python freetype openblas gfortran openssh bash freetype libpng python2-tkinter libjpeg py-pillow tiff zlib libwebp openjpeg' \
+	BUILD_PACKAGES='gcc g++ make python-dev cython-dev py-numpy-dev@testing glib glib-dev curl libpng-dev freetype-dev libwebp-dev tiff-dev' \
+	PIP_PACKAGES='setuptools python-dateutil chardet numpy scipy>=0.9.0 reverend matplotlib dill cython six>=1.7.3 networkx>=1.8 dask[array]>=0.5.0 scikit-learn==0.17 scikit-image pandas pytesseract exifread pysparkling phonenumbers textblob olefile langdetect  https://github.com/mattgwwalker/msg-extractor/zipball/master'
+
+RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories \
+    && apk add --update --no-cache \
+    	$BASE_PACKAGES \
+    	$BUILD_PACKAGES \
+    && update-ca-certificates \
+    && curl -fSL 'https://bootstrap.pypa.io/get-pip.py' | python \
+    && pip install --no-cache-dir $PIP_PACKAGES 
+
+CMD ["/bin/true"]

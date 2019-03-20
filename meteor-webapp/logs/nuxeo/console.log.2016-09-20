@@ -1,0 +1,43 @@
+2016-09-19 23:59:59,119 INFO  [org.nuxeo.launcher.config.ServerConfigurator] Detected Tomcat server.
+2016-09-19 23:59:59,126 INFO  [org.nuxeo.launcher.config.ConfigurationGenerator] Nuxeo home:          /opt/nuxeo/server
+2016-09-19 23:59:59,127 INFO  [org.nuxeo.launcher.config.ConfigurationGenerator] Nuxeo configuration: /opt/nuxeo/server/bin/nuxeo.conf
+2016-09-19 23:59:59,164 INFO  [org.nuxeo.launcher.config.ConfigurationGenerator] Include template: /opt/nuxeo/server/templates/common-base
+2016-09-19 23:59:59,164 INFO  [org.nuxeo.launcher.config.ConfigurationGenerator] Include template: /opt/nuxeo/server/templates/server
+2016-09-19 23:59:59,164 INFO  [org.nuxeo.launcher.config.ConfigurationGenerator] Include template: /opt/nuxeo/server/templates/common
+2016-09-19 23:59:59,164 INFO  [org.nuxeo.launcher.config.ConfigurationGenerator] Include template: /opt/nuxeo/server/templates/postgresql
+2016-09-19 23:59:59,165 INFO  [org.nuxeo.launcher.config.ConfigurationGenerator] Include template: /opt/nuxeo/server/templates/mongodb
+2016-09-19 23:59:59,165 INFO  [org.nuxeo.launcher.config.ConfigurationGenerator] Include template: /opt/nuxeo/server/templates/gridfsbinaries
+2016-09-19 23:59:59,165 INFO  [org.nuxeo.launcher.config.ConfigurationGenerator] Include template: /opt/nuxeo/server/templates/drive
+2016-09-19 23:59:59,367 INFO  [org.nuxeo.launcher.connect.ConnectBroker] Local packages:
+2016-09-19 23:59:59,432 INFO  [org.nuxeo.launcher.connect.ConnectBroker]  addon     started	easyshare (id: easyshare-1.3.3)
+ addon     started	fs-exporter (id: fs-exporter-1.4.2)
+ addon     started	nuxeo-agenda (id: nuxeo-agenda-1.4.1)
+ addon     started	nuxeo-box-api (id: nuxeo-box-api-1.3.3)
+ addon     started	nuxeo-cc-connector-marketplace (id: nuxeo-cc-connector-marketplace-1.2.1-SNAPSHOT)
+ addon     started	nuxeo-csv (id: nuxeo-csv-1.5.3)
+ addon     started	nuxeo-dam (id: nuxeo-dam-6.2.2)
+ addon     started	nuxeo-diff (id: nuxeo-diff-1.7.2)
+ addon     started	nuxeo-diff-pictures (id: nuxeo-diff-pictures-1.1.2)
+ addon  downloaded	nuxeo-document-routing (id: nuxeo-document-routing-1.0.0-SNAPSHOT)
+ addon     started	nuxeo-drive (id: nuxeo-drive-1.6.2)
+ addon     started	nuxeo-groups-rights-audit (id: nuxeo-groups-rights-audit-1.8.2)
+ addon     started	nuxeo-imap-connector (id: nuxeo-imap-connector-1.2.3)
+ addon     started	nuxeo-jenkins-report-mp (id: nuxeo-jenkins-report-mp-3.8.3)
+ addon     started	nuxeo-jsf-ui (id: nuxeo-jsf-ui-8.3.0)
+ addon     started	nuxeo-liveconnect (id: nuxeo-liveconnect-1.1.2)
+ addon     started	nuxeo-mediapublishing (id: nuxeo-mediapublishing-1.2.3)
+ addon     started	nuxeo-multi-tenant (id: nuxeo-multi-tenant-1.6.3)
+ addon  downloaded	nuxeo-platform-importer (id: nuxeo-platform-importer-1.7.2)
+ addon  downloaded	nuxeo-platform-smart-search (id: nuxeo-platform-smart-search-1.4.1-SNAPSHOT)
+ addon     started	nuxeo-platform-user-registration (id: nuxeo-platform-user-registration-1.7.2)
+ addon     started	nuxeo-quota (id: nuxeo-quota-1.6.2)
+ addon  downloaded	nuxeo-rss-reader (id: nuxeo-rss-reader-1.1.1-SNAPSHOT)
+ addon     started	nuxeo-scan-importer (id: nuxeo-scan-importer-1.3.3)
+ addon     started	nuxeo-signature (id: nuxeo-signature-2.5.2)
+ addon     started	nuxeo-spreadsheet (id: nuxeo-spreadsheet-1.2.2)
+ addon     started	nuxeo-template-rendering (id: nuxeo-template-rendering-6.6.2)
+ addon     started	nuxeo-timeoff (id: nuxeo-timeoff-1.0.7)
+ addon     started	nuxeo-travel-expenses (id: nuxeo-travel-expenses-1.1.2)
+ addon     started	nuxeo-vision (id: nuxeo-vision-1.1.3)
+ addon     started	nuxeo-web-ui (id: nuxeo-web-ui-0.7.0)
+

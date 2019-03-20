@@ -1,0 +1,176 @@
+FROM frolvlad/alpine-glibc 
+
+ENV PYTHON_VERSION=2.7.13 \
+	PYTHON_VERSION=2.7.13 \
+	OPENCV_VERSION=3.1.0 \
+	PYTHON_PIP_VERSION=9.0.1 \
+	IGRAPH_VERSION=0.7.1 \
+	NUMPY_VERSION=1.11.2 \
+	DASK_VERSION=0.5.0 \
+	SIX_VERSION=1.7.3 \
+	NETWORK_VERSION=1.8 \
+	SKL_VERSION=0.17 \
+	IGRAPH_VERSION=0.6.5 \
+	MITIE_VERSION=0.4 
+
+ENV IGRAPH_DIR=igraph-$IGRAPH_VERSION \
+	OPENCV_DIR=opencv-$OPENCV_VERSION \
+	NUMPY_DIR=numpy-$NUMPY_VERSION \
+	MITIE_DIR=MITIE-$MITIE_VERSION \
+	PYTHON_DIR=Python-$PYTHON_VERSION 
+
+ENV IGRAPH_PACKAGE=$IGRAPH_DIR.tar.gz \
+	OPENCV_PACKAGE=$OPENCV_VERSION.zip \
+	NUMPY_PACKAGE=$NUMPY_DIR.tar.gz \
+	MITIE_PACKAGE=v$MITIE_VERSION.zip \
+	PYTHON_PACKAGE=$PYTHON_DIR.tgz 
+
+ENV GITHUB_URL=https://github.com \
+	SOURCEFORGE_URL=http://downloads.sourceforge.net \
+	PYPI_URL=https://pypi.python.org/packages/source
+
+ENV ALPINE_URL=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+	IGRAPH_URL=$SOURCEFORGE_URL/igraph/$IGRAPH_PACKAGE \
+	OPENCV_URL=$GITHUB_URL/opencv/opencv/archive/$OPENCV_PACKAGE \
+	NUMPY_URL=$SOURCEFORGE_URL/project/numpy/NumPy/$NUMPY_VERSION/$NUMPY_PACKAGE \
+	MITIE_URL=$GITHUB_URL/mit-nlp/MITIE/archive/$MITIE_PACKAGE \
+	PYTHON_URL=http://www.python.org/ftp/python/$PYTHON_VERSION/$PYTHON_PACKAGE \
+	VIRTUALENV_URL=$PYPI_URL/v/virtualenv/$VIRTUALENV_PACKAGE 
+
+ENV OPENCV_CPUCOUNT=1 \
+	GPG_KEY=C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF \
+	FETCH_PACKAGES='wget' \
+	BASE_PACKAGES='bash subversion gfortran ca-certificates procps pkgconfig pkgconf' \
+	BUILD_PACKAGES='build-base cmake make expat-dev sqlite-dev ncurses-dev bzip2-dev tk-dev libffi-dev gcc g++ gd-dev automake autoconf libxml2-dev flex-dev byacc openblas-dev arpack-dev openblas-ilp64 gmp-dev syslinux-dev openblas-dev linux-headers file libxml2-dev libjpeg-turbo-dev tiff-dev ffmpeg-dev pax-utils readline-dev openssl-dev libpng-dev libgsf-dev' \
+	PYTHON_BASE_PACKAGES="scipy matplotlib pandas" \
+	PYTHON_PACKAGES="supervisor python-dateutil pymongo chardet reverend six>=${SIX_VERSION} dill networkx>=${NETWORK_VERSION} dask[array]>=${DASK_VERSION} scikit-learn==${SKL_VERSION} scikit-image nose pytesseract exifread Pillow pysparkling phonenumbers textblob olefile langdetect python-igraph==${IGRAPH_VERSION} https://github.com/mattgwwalker/msg-extractor/zipball/master"
+
+ENV JAVA_HOME=/usr/lib/jvm/default-jvm \
+	BASE_PATH=/usr/src/app \
+	LOCAL_PATH=/usr/local \
+	SYSTEM_SITEPATH=/usr/x86_64-alpine-linux-musl \
+	ALPINE_REPO_PATH=/etc/apk/repositories
+
+ENV VIRTUALENV_NAME='python-packages' \
+	PYTHON_NAME='.localpython'
+
+ENV MAIN_PYTHON=$BASE_PATH/$MAIN_PYTHON_NAME
+
+ENV OCV_PACKAGEPATH=$BASE_PATH/$OPENCV_PACKAGE \
+	OCV_DIRPATH=$BASE_PATH/$OPENCV_DIR \
+	PYTHON_PACKAGEPATH=$BASE_PATH/$PYTHON_PACKAGE \
+	PYTHON_DIRPATH=$BASE_PATH/$PYTHON_DIR \
+	NUMPY_PACKAGEPATH=$BASE_PATH/$NUMPY_PACKAGE \
+	NUMPY_DIRPATH=$BASE_PATH/$NUMPY_DIR \
+	MITIE_PACKAGEPATH=$BASE_PATH/$MITIE_PACKAGE \
+	MITIE_DIRPATH=$LOCAL_PATH/$MITIE_DIR \
+	IGRAPH_PACKAGEPATH=$BASE_PATH/$IGRAPH_PACKAGE \
+	IGRAPH_DIRPATH=$BASE_PATH/$IGRAPH_DIR \
+	VIRTUALENV_PATH=$BASE_PATH/$VIRTUALENV_NAME
+
+ENV VIRTUALENV_ACTIVATE=$VIRTUALENV_PATH/bin/activate \
+	MAIN_PYTHON_EXECUTE=$MAIN_PYTHON/bin/python2.7
+
+WORKDIR $BASE_PATH
+
+ADD alpine-headers/sys $SYSTEM_SITEPATH/include/sys/
+ADD alpine-headers/fpu_control.h $SYSTEM_SITEPATH/include/
+ADD sysdep1.h $BASE_PATH/
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+RUN echo @testing $ALPINE_URL >> $ALPINE_REPO_PATH \
+    && apk add --update --no-cache $BASE_PACKAGES $BUILD_PACKAGES $FETCH_PACKAGES \
+    && update-ca-certificates \
+    && rm /bin/sh \
+    && ln -s /bin/bash /bin/sh \
+    && ln -s /usr/include/locale.h /usr/include/xlocale.h \
+	&& wget $IGRAPH_URL \
+	&& wget $OPENCV_URL \
+	&& wget $NUMPY_URL \
+	&& wget $MITIE_URL \
+	&& wget $PYTHON_URL \
+	&& unzip -q $OCV_PACKAGEPATH \
+	&& unzip -q $MITIE_PACKAGEPATH -d $LOCAL_PATH \
+	&& tar -xzf $PYTHON_PACKAGEPATH \
+	&& tar -xzf $IGRAPH_PACKAGEPATH \
+	&& tar -xzf $NUMPY_PACKAGEPATH \
+	&& rm $IGRAPH_DIRPATH/src/f2c/sysdep1.h \
+	&& mv sysdep1.h $IGRAPH_DIRPATH/src/f2c/sysdep1.h \
+	&& rm $PYTHON_PACKAGEPATH \
+    && rm $IGRAPH_PACKAGEPATH \
+	&& rm $NUMPY_PACKAGEPATH \
+	&& rm $OCV_PACKAGEPATH \
+	&& rm $MITIE_PACKAGEPATH \
+	&& mkdir $PYTHON_NAME \
+	&& cd $PYTHON_DIRPATH \
+	&& ./configure \
+		--prefix=$MAIN_PYTHON \
+		--with-ensurepip \
+		--with-system-expat \
+		--with-system-ffi \
+		--enable-shared \
+		LDFLAGS=-L$MAIN_PYTHON/extlib/lib \
+    	CPPFLAGS=-I$MAIN_PYTHON/extlib/include \
+	&& make \
+	&& make install \
+	&& cd $BASE_PATH \
+	&& pip install --no-cache-dir virtualenv \
+	&& virtualenv $VIRTUALENV_NAME -p $MAIN_PYTHON/bin/python2.7 \
+	&& source $VIRTUALENV_ACTIVATE \
+	&& cd $MITIE_DIRPATH \
+	&& make MITIE-models \
+	&& cd tools/ner_stream \
+	&& mkdir build \
+	&& cd build \
+	&& cmake .. \
+	&& cmake --build . --config Release \
+	&& cd $MITIE_DIRPATH/mitielib \
+	&& make INSTALL_PREFIX=$VIRTUALENV_PATH \
+	&& mkdir build \
+	&& cd build \
+	&& cmake .. \
+	&& cmake --build . --config Release --target install \
+	&& pip install --no-cache-dir cython \
+	&& export NPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) \
+    && cd $NUMPY_DIRPATH \
+    && cp site.cfg.example site.cfg \
+    && echo -en "\n[openblas]\nlibraries = openblas\nlibrary_dirs = /usr/lib\ninclude_dirs = /usr/include\n" >> site.cfg \
+    && python setup.py build -j ${NPROC} --fcompiler=gfortran install \
+    && cd $IGRAPH_DIRPATH \
+	&& ./configure \
+		--prefix=$VIRTUALENV_PATH
+	&& make \
+	&& make install \
+	&& cd $OCV_DIRPATH \
+	&& mkdir build \
+    && cd build \
+	&& cmake \
+		-DCMAKE_INSTALL_PREFIX=$VIRTUALENV_PATH \
+	    -DCMAKE_BUILD_TYPE=RELEASE \
+	    -D ENABLE_PRECOMPILED_HEADERS=OFF \
+    	-DWITH_FFMPEG=OFF \
+    	-DBUILD_opencv_highgui=OFF \
+    	-DWITH_QT=OFF \
+    	-DWITH_GTK=OFF \
+    	-DWITH_IPP=NO \
+    	-DWITH_OPENEXR=NO .. \
+		.. \
+	&& make \
+	&& make install \
+	&& cd $LIBPST_DIRPATH \
+	&& ./configure --enable-python=no \
+	&& make \
+	&& make install \
+	&& pip install --no-cache-dir $PYTHON_BASE_PACKAGES \
+	&& pip install --no-cache-dir $PYTHON_PACKAGES \
+    && python -m textblob.download_corpora \
+	&& rm -r $PYTHON_DIRPATH \
+	&& rm -r $OCV_DIRPATH \
+    && rm -r $NUMPY_DIRPATH \
+	&& rm -r $IGRAPH_DIRPATH \
+	&& rm -r $LIBPST_DIRPATH \
+	&& apk del $FETCH_PACKAGES $BUILD_PACKAGES
+
+RUN ln -s $LOCAL_PATH/MITIE/mitielib/libmitie.a $BASE_PATH/libmitie.a \
+	&& ln -s $LOCAL_PATH/MITIE/mitielib/libmitie.so $BASE_PATH/libmitie.so \
+	&& ln -s $LOCAL_PATH/MITIE/mitielib/mitie.py $BASE_PATH/mitie.py

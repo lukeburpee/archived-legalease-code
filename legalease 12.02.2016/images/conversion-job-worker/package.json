@@ -1,0 +1,17 @@
+{
+  "name": "job-worker",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ddp": "^0.12.1",
+    "ddp-login": "^1.0.10",
+    "meteor-job": "^1.4.0",
+    "request": "^2.76.0"
+  }
+}

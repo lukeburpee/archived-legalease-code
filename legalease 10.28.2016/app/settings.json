@@ -1,0 +1,18 @@
+{
+	"ROOT_URL": "http://localhost:3000",
+	"MONGO_URL": "mongodb://mongo1:27017,mongo2:27017,mongo3:27017/app?replicaSet=appRS",
+	"MONGO_OPLOG_URL": "mongodb://mongo1:27017,mongo2:27017,mongo3:27017/local?replicaSet=appRS",
+	"DATA_MONGO_URL": "mongodb://mongo1:27017,mongo2:27017,mongo3:27017/local?replicaSet=appRS",
+	"SEARCH_ELASTIC_URL": "http://elastic1:9200",
+	"BATCH_COUNT": "100",
+	"TIKA_TEXT_SERVER": "http://tika:9998/tika",
+	"TIKA_RMETA_SERVER": "http://tika:9998/rmeta",
+	"TIKA1_META_SERVER" : "http://tika:9998/meta",
+	"TIKA1_LANG_ID_SERVER":"http://tika:9998/language",
+	"TIKA1_ZIP_SERVER":"http://tika:9998/unpack",
+	"LINGO24_TRANS_SERVER":"http://tika:9998/translate/all/org.apache.tika.language.translate.Lingo24Translator",
+	"MICROSOFT_TRANS_SERVER":"http://tika:9998/translate/all/org.apache.tika.language.translate.MicrosoftTranslator",
+	"GOOGLE_TRANS_SERVER":"http://tika:9998/translate/all/org.apache.tika.language.translate.GoogleTranslator",
+	"UNOCONV1_SERVER": "http://unoconv:3121/document",
+	"REDIS_SERVER": "http://redis:6379"
+}

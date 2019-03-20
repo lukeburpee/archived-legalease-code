@@ -1,0 +1,9 @@
+FROM tzapu/development-meteor
+RUN apt-get install -y sudo && \
+	adduser user && \
+	echo "user ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/user && \
+	chmod 0440 /etc/sudoers.d/user 
+WORKDIR /usr/src/app/
+ADD ./config/package.json /usr/src/app/
+
+RUN sudo meteor npm install

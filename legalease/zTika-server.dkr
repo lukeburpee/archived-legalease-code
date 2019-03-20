@@ -1,0 +1,64 @@
+FROM burpee/alpine:v3.5.1
+MAINTAINER legalease.software@gmail.com
+
+RUN set -x && \
+  # enable to use wget command for donwloading from https site
+  apk add --update --no-cache --virtual wget-dependencies \
+    ca-certificates \
+    openssl && \
+  # tesseract is in testing repo
+  echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
+  apk add --update --no-cache openjdk8-jre-base openjdk8-jre-lib gdal tesseract-ocr && \
+  # download traineddata
+  # english
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/eng.cube.bigrams && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/eng.cube.fold && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/eng.cube.lm && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/eng.cube.nn && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/eng.cube.params && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/eng.cube.size && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/eng.cube.word-freq && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/eng.tesseract_cube.nn && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/eng.traineddata && \
+  # spanish
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/spa.cube.bigrams && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/spa.cube.fold && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/spa.cube.lm && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/spa.cube.nn && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/spa.cube.params && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/spa.cube.size && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/spa.cube.word-freq && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/spa.traineddata && \
+  # french
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/fra.cube.bigrams && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/fra.cube.fold && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/fra.cube.lm && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/fra.cube.nn && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/fra.cube.params && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/fra.cube.size && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/fra.cube.word-freq && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/fra.tesseract_cube.nn && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/fra.traineddata && \
+  # italian
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/ita.cube.bigrams && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/ita.cube.fold && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/ita.cube.lm && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/ita.cube.nn && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/ita.cube.params && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/ita.cube.size && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/ita.cube.word-freq && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/ita.tesseract_cube.nn && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/ita.traineddata && \
+  # german
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/deu.traineddata && \
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/deu_frak.traineddata && \
+  # enable to use hocr option
+  wget -q -P /usr/share/tessdata/ https://github.com/tesseract-ocr/tessdata/tree/3.04.00/osd.traineddata && \
+  # delete wget-dependencies
+  apk del wget-dependencies
+
+ADD setup-packages/tika-server-1.14.jar /
+
+EXPOSE 9998
+
+ENTRYPOINT java -jar /tika-server-1.14.jar -h 0.0.0.0

@@ -1,0 +1,1534 @@
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.68
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Feb 8 2016 20:25:54 UTC
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.68.0
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Mac OS X
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            10.10.5
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          x86_64
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/jre
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.8.0_73-b02
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/Users/andrewburpee/desktop/tomcat/conf/logging.properties
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/Users/andrewburpee/desktop/tomcat/endorsed
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 7:46:40 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/Users/andrewburpee/desktop/tomcat/temp
+Feb 29, 2016 7:46:40 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/andrewburpee/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Feb 29, 2016 7:46:41 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 7:46:41 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 7:46:41 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 4478 ms
+Feb 29, 2016 7:46:41 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Feb 29, 2016 7:46:41 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.68
+Feb 29, 2016 7:46:41 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs
+Feb 29, 2016 7:46:43 PM org.apache.catalina.util.SessionIdGeneratorBase createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [157] milliseconds.
+Feb 29, 2016 7:46:43 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs has finished in 1,103 ms
+Feb 29, 2016 7:46:43 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples
+Feb 29, 2016 7:46:43 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples has finished in 794 ms
+Feb 29, 2016 7:46:43 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager
+Feb 29, 2016 7:46:43 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager has finished in 89 ms
+Feb 29, 2016 7:46:43 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager
+Feb 29, 2016 7:46:44 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager has finished in 78 ms
+Feb 29, 2016 7:46:44 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT
+Feb 29, 2016 7:46:44 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT has finished in 74 ms
+Feb 29, 2016 7:46:44 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 7:46:44 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 7:46:44 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 2366 ms
+Feb 29, 2016 7:48:44 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone-standalone-webapp
+Feb 29, 2016 7:48:44 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone-standalone-webapp has finished in 201 ms
+Feb 29, 2016 7:51:55 PM org.apache.catalina.startup.HostConfig undeploy
+INFO: Undeploying context [/viewone-standalone-webapp]
+Feb 29, 2016 7:51:55 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/daejaViewOne
+Feb 29, 2016 7:51:55 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/daejaViewOne has finished in 85 ms
+Feb 29, 2016 7:53:24 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 7:53:24 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 7:53:24 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Feb 29, 2016 7:53:24 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 7:53:24 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 7:53:24 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 7:53:24 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.68
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Feb 8 2016 20:25:54 UTC
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.68.0
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Mac OS X
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            10.10.5
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          x86_64
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/jre
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.8.0_73-b02
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/Users/andrewburpee/desktop/tomcat/conf/logging.properties
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/Users/andrewburpee/desktop/tomcat/endorsed
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/Users/andrewburpee/desktop/tomcat/temp
+Feb 29, 2016 7:53:28 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/andrewburpee/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Feb 29, 2016 7:53:28 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 7:53:28 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 878 ms
+Feb 29, 2016 7:53:28 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Feb 29, 2016 7:53:28 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.68
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/daejaViewOne
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/daejaViewOne has finished in 355 ms
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs has finished in 106 ms
+Feb 29, 2016 7:53:28 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples
+Feb 29, 2016 7:53:29 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples has finished in 560 ms
+Feb 29, 2016 7:53:29 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager
+Feb 29, 2016 7:53:29 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager has finished in 73 ms
+Feb 29, 2016 7:53:29 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager
+Feb 29, 2016 7:53:29 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager has finished in 56 ms
+Feb 29, 2016 7:53:29 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT
+Feb 29, 2016 7:53:29 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT has finished in 73 ms
+Feb 29, 2016 7:53:29 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 7:53:29 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 7:53:29 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1304 ms
+Feb 29, 2016 7:53:46 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 7:53:47 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 7:53:47 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Feb 29, 2016 7:53:47 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 7:53:47 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 7:53:47 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 7:53:47 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.68
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Feb 8 2016 20:25:54 UTC
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.68.0
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Mac OS X
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            10.10.5
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          x86_64
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/jre
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.8.0_73-b02
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/Users/andrewburpee/desktop/tomcat/conf/logging.properties
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/Users/andrewburpee/desktop/tomcat/endorsed
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 9:54:54 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/Users/andrewburpee/desktop/tomcat/temp
+Feb 29, 2016 9:54:54 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/andrewburpee/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Feb 29, 2016 9:55:00 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 9:55:00 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 9:55:00 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 19449 ms
+Feb 29, 2016 9:55:00 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Feb 29, 2016 9:55:00 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.68
+Feb 29, 2016 9:55:01 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/daejaViewOne
+Feb 29, 2016 9:55:05 PM org.apache.catalina.util.SessionIdGeneratorBase createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [600] milliseconds.
+Feb 29, 2016 9:55:06 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/daejaViewOne has finished in 4,834 ms
+Feb 29, 2016 9:55:06 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs
+Feb 29, 2016 9:55:06 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs has finished in 176 ms
+Feb 29, 2016 9:55:06 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples
+Feb 29, 2016 9:55:08 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples has finished in 2,550 ms
+Feb 29, 2016 9:55:08 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager
+Feb 29, 2016 9:55:08 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager has finished in 165 ms
+Feb 29, 2016 9:55:08 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager
+Feb 29, 2016 9:55:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager has finished in 148 ms
+Feb 29, 2016 9:55:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT
+Feb 29, 2016 9:55:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT has finished in 49 ms
+Feb 29, 2016 9:55:09 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 9:55:09 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 9:55:09 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 8487 ms
+Feb 29, 2016 9:57:19 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewer
+Feb 29, 2016 9:57:19 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewer has finished in 290 ms
+Feb 29, 2016 10:04:39 PM org.apache.catalina.startup.HostConfig reload
+INFO: Reloading context [/viewer]
+Feb 29, 2016 10:04:39 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/viewer] has started
+Feb 29, 2016 10:04:40 PM org.apache.tomcat.util.digester.Digester fatalError
+SEVERE: Parse Fatal Error at line 5 column 2: The markup in the document following the root element must be well-formed.
+org.xml.sax.SAXParseException; systemId: jndi:/localhost/viewer/WEB-INF/web.xml; lineNumber: 5; columnNumber: 2; The markup in the document following the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$TrailingMiscDriver.next(XMLDocumentScannerImpl.java:1400)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1555)
+	at org.apache.catalina.startup.ContextConfig.parseWebXml(ContextConfig.java:1858)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1263)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:889)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:386)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5472)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:4088)
+	at org.apache.catalina.startup.HostConfig.reload(HostConfig.java:1538)
+	at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1511)
+	at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1744)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:333)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1371)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1543)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1553)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1521)
+	at java.lang.Thread.run(Thread.java:745)
+
+Feb 29, 2016 10:04:40 PM org.apache.catalina.startup.ContextConfig parseWebXml
+SEVERE: Parse error in application web.xml file at jndi:/localhost/viewer/WEB-INF/web.xml
+org.xml.sax.SAXParseException; systemId: jndi:/localhost/viewer/WEB-INF/web.xml; lineNumber: 5; columnNumber: 2; The markup in the document following the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$TrailingMiscDriver.next(XMLDocumentScannerImpl.java:1400)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1555)
+	at org.apache.catalina.startup.ContextConfig.parseWebXml(ContextConfig.java:1858)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1263)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:889)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:386)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5472)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:4088)
+	at org.apache.catalina.startup.HostConfig.reload(HostConfig.java:1538)
+	at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1511)
+	at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1744)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:333)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1371)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1543)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1553)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1521)
+	at java.lang.Thread.run(Thread.java:745)
+
+Feb 29, 2016 10:04:40 PM org.apache.catalina.startup.ContextConfig parseWebXml
+SEVERE: Occurred at line 5 column 2
+Feb 29, 2016 10:04:40 PM org.apache.catalina.startup.ContextConfig configureStart
+SEVERE: Marking this application unavailable due to previous error(s)
+Feb 29, 2016 10:04:40 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Feb 29, 2016 10:04:40 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: One or more components marked the context as not correctly configured
+Feb 29, 2016 10:04:40 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: Context [/viewer] startup failed due to previous errors
+Feb 29, 2016 10:04:40 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/viewer] is completed
+Feb 29, 2016 10:05:30 PM org.apache.catalina.startup.HostConfig reload
+INFO: Reloading context [/viewer]
+Feb 29, 2016 10:05:30 PM org.apache.tomcat.util.digester.Digester fatalError
+SEVERE: Parse Fatal Error at line 6 column 2: The markup in the document following the root element must be well-formed.
+org.xml.sax.SAXParseException; systemId: jndi:/localhost/viewer/WEB-INF/web.xml; lineNumber: 6; columnNumber: 2; The markup in the document following the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$TrailingMiscDriver.next(XMLDocumentScannerImpl.java:1400)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1555)
+	at org.apache.catalina.startup.ContextConfig.parseWebXml(ContextConfig.java:1858)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1263)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:889)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:386)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5472)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.HostConfig.reload(HostConfig.java:1547)
+	at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1511)
+	at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1744)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:333)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1371)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1543)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1553)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1521)
+	at java.lang.Thread.run(Thread.java:745)
+
+Feb 29, 2016 10:05:30 PM org.apache.catalina.startup.ContextConfig parseWebXml
+SEVERE: Parse error in application web.xml file at jndi:/localhost/viewer/WEB-INF/web.xml
+org.xml.sax.SAXParseException; systemId: jndi:/localhost/viewer/WEB-INF/web.xml; lineNumber: 6; columnNumber: 2; The markup in the document following the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$TrailingMiscDriver.next(XMLDocumentScannerImpl.java:1400)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1555)
+	at org.apache.catalina.startup.ContextConfig.parseWebXml(ContextConfig.java:1858)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1263)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:889)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:386)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5472)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.HostConfig.reload(HostConfig.java:1547)
+	at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1511)
+	at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1744)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:333)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1371)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1543)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1553)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1521)
+	at java.lang.Thread.run(Thread.java:745)
+
+Feb 29, 2016 10:05:30 PM org.apache.catalina.startup.ContextConfig parseWebXml
+SEVERE: Occurred at line 6 column 2
+Feb 29, 2016 10:05:30 PM org.apache.catalina.startup.ContextConfig configureStart
+SEVERE: Marking this application unavailable due to previous error(s)
+Feb 29, 2016 10:05:30 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Feb 29, 2016 10:05:30 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: One or more components marked the context as not correctly configured
+Feb 29, 2016 10:05:30 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: Context [/viewer] startup failed due to previous errors
+Feb 29, 2016 10:05:44 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:05:44 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:05:45 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Feb 29, 2016 10:05:45 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:05:45 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:05:45 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:05:45 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.68
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Feb 8 2016 20:25:54 UTC
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.68.0
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Mac OS X
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            10.10.5
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          x86_64
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/jre
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.8.0_73-b02
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/Users/andrewburpee/desktop/tomcat/conf/logging.properties
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/Users/andrewburpee/desktop/tomcat/endorsed
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:05:52 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/Users/andrewburpee/desktop/tomcat/temp
+Feb 29, 2016 10:05:52 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/andrewburpee/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Feb 29, 2016 10:05:53 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:05:53 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:05:53 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 4235 ms
+Feb 29, 2016 10:05:53 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Feb 29, 2016 10:05:53 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.68
+Feb 29, 2016 10:05:54 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/daejaViewOne
+Feb 29, 2016 10:05:54 PM org.apache.catalina.util.SessionIdGeneratorBase createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [134] milliseconds.
+Feb 29, 2016 10:05:55 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/daejaViewOne has finished in 1,014 ms
+Feb 29, 2016 10:05:55 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs
+Feb 29, 2016 10:05:55 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs has finished in 87 ms
+Feb 29, 2016 10:05:55 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples
+Feb 29, 2016 10:05:55 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples has finished in 765 ms
+Feb 29, 2016 10:05:55 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager
+Feb 29, 2016 10:05:55 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager has finished in 89 ms
+Feb 29, 2016 10:05:55 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager
+Feb 29, 2016 10:05:56 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager has finished in 59 ms
+Feb 29, 2016 10:05:56 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT
+Feb 29, 2016 10:05:56 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT has finished in 49 ms
+Feb 29, 2016 10:05:56 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewer
+Feb 29, 2016 10:05:56 PM org.apache.tomcat.util.digester.Digester fatalError
+SEVERE: Parse Fatal Error at line 6 column 2: The markup in the document following the root element must be well-formed.
+org.xml.sax.SAXParseException; systemId: jndi:/localhost/viewer/WEB-INF/web.xml; lineNumber: 6; columnNumber: 2; The markup in the document following the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$TrailingMiscDriver.next(XMLDocumentScannerImpl.java:1400)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1555)
+	at org.apache.catalina.startup.ContextConfig.parseWebXml(ContextConfig.java:1858)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1263)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:889)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:386)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5472)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:899)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:875)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:652)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1259)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1998)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Feb 29, 2016 10:05:56 PM org.apache.catalina.startup.ContextConfig parseWebXml
+SEVERE: Parse error in application web.xml file at jndi:/localhost/viewer/WEB-INF/web.xml
+org.xml.sax.SAXParseException; systemId: jndi:/localhost/viewer/WEB-INF/web.xml; lineNumber: 6; columnNumber: 2; The markup in the document following the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$TrailingMiscDriver.next(XMLDocumentScannerImpl.java:1400)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1555)
+	at org.apache.catalina.startup.ContextConfig.parseWebXml(ContextConfig.java:1858)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1263)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:889)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:386)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5472)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:899)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:875)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:652)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1259)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1998)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Feb 29, 2016 10:05:56 PM org.apache.catalina.startup.ContextConfig parseWebXml
+SEVERE: Occurred at line 6 column 2
+Feb 29, 2016 10:05:56 PM org.apache.catalina.startup.ContextConfig configureStart
+SEVERE: Marking this application unavailable due to previous error(s)
+Feb 29, 2016 10:05:56 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Feb 29, 2016 10:05:56 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: One or more components marked the context as not correctly configured
+Feb 29, 2016 10:05:56 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: Context [/viewer] startup failed due to previous errors
+Feb 29, 2016 10:05:56 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewer has finished in 67 ms
+Feb 29, 2016 10:05:56 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:05:56 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:05:56 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 2405 ms
+Feb 29, 2016 10:08:46 PM org.apache.catalina.startup.HostConfig reload
+INFO: Reloading context [/viewer]
+Feb 29, 2016 10:08:46 PM org.apache.tomcat.util.digester.Digester fatalError
+SEVERE: Parse Fatal Error at line 5 column 2: The markup in the document following the root element must be well-formed.
+org.xml.sax.SAXParseException; systemId: jndi:/localhost/viewer/WEB-INF/web.xml; lineNumber: 5; columnNumber: 2; The markup in the document following the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$TrailingMiscDriver.next(XMLDocumentScannerImpl.java:1400)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1555)
+	at org.apache.catalina.startup.ContextConfig.parseWebXml(ContextConfig.java:1858)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1263)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:889)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:386)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5472)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.HostConfig.reload(HostConfig.java:1547)
+	at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1511)
+	at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1744)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:333)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1371)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1543)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1553)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1521)
+	at java.lang.Thread.run(Thread.java:745)
+
+Feb 29, 2016 10:08:46 PM org.apache.catalina.startup.ContextConfig parseWebXml
+SEVERE: Parse error in application web.xml file at jndi:/localhost/viewer/WEB-INF/web.xml
+org.xml.sax.SAXParseException; systemId: jndi:/localhost/viewer/WEB-INF/web.xml; lineNumber: 5; columnNumber: 2; The markup in the document following the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$TrailingMiscDriver.next(XMLDocumentScannerImpl.java:1400)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1555)
+	at org.apache.catalina.startup.ContextConfig.parseWebXml(ContextConfig.java:1858)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1263)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:889)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:386)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5472)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.HostConfig.reload(HostConfig.java:1547)
+	at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1511)
+	at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1744)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:333)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1371)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1543)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1553)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1521)
+	at java.lang.Thread.run(Thread.java:745)
+
+Feb 29, 2016 10:08:46 PM org.apache.catalina.startup.ContextConfig parseWebXml
+SEVERE: Occurred at line 5 column 2
+Feb 29, 2016 10:08:46 PM org.apache.catalina.startup.ContextConfig configureStart
+SEVERE: Marking this application unavailable due to previous error(s)
+Feb 29, 2016 10:08:46 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Feb 29, 2016 10:08:46 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: One or more components marked the context as not correctly configured
+Feb 29, 2016 10:08:46 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: Context [/viewer] startup failed due to previous errors
+Feb 29, 2016 10:11:46 PM org.apache.catalina.startup.HostConfig undeploy
+INFO: Undeploying context [/viewer]
+Feb 29, 2016 10:11:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone
+Feb 29, 2016 10:11:47 PM org.apache.tomcat.util.digester.Digester fatalError
+SEVERE: Parse Fatal Error at line 5 column 2: The markup in the document following the root element must be well-formed.
+org.xml.sax.SAXParseException; systemId: jndi:/localhost/viewone/WEB-INF/web.xml; lineNumber: 5; columnNumber: 2; The markup in the document following the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$TrailingMiscDriver.next(XMLDocumentScannerImpl.java:1400)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1555)
+	at org.apache.catalina.startup.ContextConfig.parseWebXml(ContextConfig.java:1858)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1263)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:889)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:386)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5472)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:899)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:875)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:652)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1259)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1998)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Feb 29, 2016 10:11:47 PM org.apache.catalina.startup.ContextConfig parseWebXml
+SEVERE: Parse error in application web.xml file at jndi:/localhost/viewone/WEB-INF/web.xml
+org.xml.sax.SAXParseException; systemId: jndi:/localhost/viewone/WEB-INF/web.xml; lineNumber: 5; columnNumber: 2; The markup in the document following the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$TrailingMiscDriver.next(XMLDocumentScannerImpl.java:1400)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1555)
+	at org.apache.catalina.startup.ContextConfig.parseWebXml(ContextConfig.java:1858)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1263)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:889)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:386)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5472)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:899)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:875)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:652)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1259)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1998)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Feb 29, 2016 10:11:47 PM org.apache.catalina.startup.ContextConfig parseWebXml
+SEVERE: Occurred at line 5 column 2
+Feb 29, 2016 10:11:47 PM org.apache.catalina.startup.ContextConfig configureStart
+SEVERE: Marking this application unavailable due to previous error(s)
+Feb 29, 2016 10:11:47 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Feb 29, 2016 10:11:47 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: One or more components marked the context as not correctly configured
+Feb 29, 2016 10:11:47 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: Context [/viewone] startup failed due to previous errors
+Feb 29, 2016 10:11:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone has finished in 83 ms
+Feb 29, 2016 10:12:05 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:12:05 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:12:05 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Feb 29, 2016 10:12:05 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:12:05 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:12:05 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:12:05 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.68
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Feb 8 2016 20:25:54 UTC
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.68.0
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Mac OS X
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            10.10.5
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          x86_64
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/jre
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.8.0_73-b02
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/Users/andrewburpee/desktop/tomcat/conf/logging.properties
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/Users/andrewburpee/desktop/tomcat/endorsed
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:12:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/Users/andrewburpee/desktop/tomcat/temp
+Feb 29, 2016 10:12:08 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/andrewburpee/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Feb 29, 2016 10:12:08 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:12:09 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:12:09 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 854 ms
+Feb 29, 2016 10:12:09 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Feb 29, 2016 10:12:09 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.68
+Feb 29, 2016 10:12:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/daejaViewOne
+Feb 29, 2016 10:12:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/daejaViewOne has finished in 366 ms
+Feb 29, 2016 10:12:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs
+Feb 29, 2016 10:12:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs has finished in 91 ms
+Feb 29, 2016 10:12:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples
+Feb 29, 2016 10:12:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples has finished in 590 ms
+Feb 29, 2016 10:12:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager
+Feb 29, 2016 10:12:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager has finished in 81 ms
+Feb 29, 2016 10:12:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager
+Feb 29, 2016 10:12:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager has finished in 54 ms
+Feb 29, 2016 10:12:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT
+Feb 29, 2016 10:12:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT has finished in 60 ms
+Feb 29, 2016 10:12:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone
+Feb 29, 2016 10:12:10 PM org.apache.tomcat.util.digester.Digester fatalError
+SEVERE: Parse Fatal Error at line 5 column 2: The markup in the document following the root element must be well-formed.
+org.xml.sax.SAXParseException; systemId: jndi:/localhost/viewone/WEB-INF/web.xml; lineNumber: 5; columnNumber: 2; The markup in the document following the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$TrailingMiscDriver.next(XMLDocumentScannerImpl.java:1400)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1555)
+	at org.apache.catalina.startup.ContextConfig.parseWebXml(ContextConfig.java:1858)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1263)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:889)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:386)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5472)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:899)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:875)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:652)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1259)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1998)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Feb 29, 2016 10:12:10 PM org.apache.catalina.startup.ContextConfig parseWebXml
+SEVERE: Parse error in application web.xml file at jndi:/localhost/viewone/WEB-INF/web.xml
+org.xml.sax.SAXParseException; systemId: jndi:/localhost/viewone/WEB-INF/web.xml; lineNumber: 5; columnNumber: 2; The markup in the document following the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$TrailingMiscDriver.next(XMLDocumentScannerImpl.java:1400)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1555)
+	at org.apache.catalina.startup.ContextConfig.parseWebXml(ContextConfig.java:1858)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1263)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:889)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:386)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5472)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:899)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:875)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:652)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1259)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1998)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Feb 29, 2016 10:12:10 PM org.apache.catalina.startup.ContextConfig parseWebXml
+SEVERE: Occurred at line 5 column 2
+Feb 29, 2016 10:12:10 PM org.apache.catalina.startup.ContextConfig configureStart
+SEVERE: Marking this application unavailable due to previous error(s)
+Feb 29, 2016 10:12:10 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Feb 29, 2016 10:12:10 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: One or more components marked the context as not correctly configured
+Feb 29, 2016 10:12:10 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: Context [/viewone] startup failed due to previous errors
+Feb 29, 2016 10:12:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone has finished in 89 ms
+Feb 29, 2016 10:12:10 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:12:10 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:12:10 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1402 ms
+Feb 29, 2016 10:14:41 PM org.apache.catalina.startup.HostConfig undeploy
+INFO: Undeploying context [/daejaViewOne]
+Feb 29, 2016 10:14:44 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:14:44 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:14:44 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Feb 29, 2016 10:14:44 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:14:44 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:14:44 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:14:44 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.68
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Feb 8 2016 20:25:54 UTC
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.68.0
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Mac OS X
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            10.10.5
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          x86_64
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/jre
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.8.0_73-b02
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/Users/andrewburpee/desktop/tomcat/conf/logging.properties
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/Users/andrewburpee/desktop/tomcat/endorsed
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:14:46 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/Users/andrewburpee/desktop/tomcat/temp
+Feb 29, 2016 10:14:46 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/andrewburpee/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Feb 29, 2016 10:14:47 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:14:47 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:14:47 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 876 ms
+Feb 29, 2016 10:14:47 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Feb 29, 2016 10:14:47 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.68
+Feb 29, 2016 10:14:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs
+Feb 29, 2016 10:14:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs has finished in 392 ms
+Feb 29, 2016 10:14:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples
+Feb 29, 2016 10:14:48 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples has finished in 597 ms
+Feb 29, 2016 10:14:48 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager
+Feb 29, 2016 10:14:48 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager has finished in 92 ms
+Feb 29, 2016 10:14:48 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager
+Feb 29, 2016 10:14:48 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager has finished in 69 ms
+Feb 29, 2016 10:14:48 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT
+Feb 29, 2016 10:14:48 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT has finished in 51 ms
+Feb 29, 2016 10:14:48 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone
+Feb 29, 2016 10:14:48 PM org.apache.tomcat.util.digester.Digester fatalError
+SEVERE: Parse Fatal Error at line 5 column 2: The markup in the document following the root element must be well-formed.
+org.xml.sax.SAXParseException; systemId: jndi:/localhost/viewone/WEB-INF/web.xml; lineNumber: 5; columnNumber: 2; The markup in the document following the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$TrailingMiscDriver.next(XMLDocumentScannerImpl.java:1400)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1555)
+	at org.apache.catalina.startup.ContextConfig.parseWebXml(ContextConfig.java:1858)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1263)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:889)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:386)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5472)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:899)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:875)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:652)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1259)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1998)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Feb 29, 2016 10:14:48 PM org.apache.catalina.startup.ContextConfig parseWebXml
+SEVERE: Parse error in application web.xml file at jndi:/localhost/viewone/WEB-INF/web.xml
+org.xml.sax.SAXParseException; systemId: jndi:/localhost/viewone/WEB-INF/web.xml; lineNumber: 5; columnNumber: 2; The markup in the document following the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$TrailingMiscDriver.next(XMLDocumentScannerImpl.java:1400)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1555)
+	at org.apache.catalina.startup.ContextConfig.parseWebXml(ContextConfig.java:1858)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1263)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:889)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:386)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5472)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:899)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:875)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:652)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1259)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1998)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Feb 29, 2016 10:14:48 PM org.apache.catalina.startup.ContextConfig parseWebXml
+SEVERE: Occurred at line 5 column 2
+Feb 29, 2016 10:14:48 PM org.apache.catalina.startup.ContextConfig configureStart
+SEVERE: Marking this application unavailable due to previous error(s)
+Feb 29, 2016 10:14:48 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Feb 29, 2016 10:14:48 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: One or more components marked the context as not correctly configured
+Feb 29, 2016 10:14:48 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: Context [/viewone] startup failed due to previous errors
+Feb 29, 2016 10:14:48 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone has finished in 56 ms
+Feb 29, 2016 10:14:48 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:14:48 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:14:48 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1320 ms
+Feb 29, 2016 10:20:58 PM org.apache.catalina.startup.HostConfig reload
+INFO: Reloading context [/viewone]
+Feb 29, 2016 10:20:59 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Feb 29, 2016 10:21:06 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:21:06 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:21:06 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Feb 29, 2016 10:21:06 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:21:06 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:21:06 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:21:06 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.68
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Feb 8 2016 20:25:54 UTC
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.68.0
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Mac OS X
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            10.10.5
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          x86_64
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/jre
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.8.0_73-b02
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/Users/andrewburpee/desktop/tomcat/conf/logging.properties
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/Users/andrewburpee/desktop/tomcat/endorsed
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:21:08 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/Users/andrewburpee/desktop/tomcat/temp
+Feb 29, 2016 10:21:08 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/andrewburpee/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Feb 29, 2016 10:21:09 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:21:09 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:21:09 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 834 ms
+Feb 29, 2016 10:21:09 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Feb 29, 2016 10:21:09 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.68
+Feb 29, 2016 10:21:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs
+Feb 29, 2016 10:21:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs has finished in 372 ms
+Feb 29, 2016 10:21:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples
+Feb 29, 2016 10:21:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples has finished in 600 ms
+Feb 29, 2016 10:21:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager
+Feb 29, 2016 10:21:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager has finished in 96 ms
+Feb 29, 2016 10:21:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager
+Feb 29, 2016 10:21:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager has finished in 61 ms
+Feb 29, 2016 10:21:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT
+Feb 29, 2016 10:21:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT has finished in 51 ms
+Feb 29, 2016 10:21:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone
+Feb 29, 2016 10:21:10 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Feb 29, 2016 10:21:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone has finished in 189 ms
+Feb 29, 2016 10:21:10 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:21:10 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:21:10 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1437 ms
+Feb 29, 2016 10:24:16 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:24:16 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:24:16 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Feb 29, 2016 10:24:16 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:24:16 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:24:16 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:24:16 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.68
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Feb 8 2016 20:25:54 UTC
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.68.0
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Mac OS X
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            10.10.5
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          x86_64
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/jre
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.8.0_73-b02
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/Users/andrewburpee/desktop/tomcat/conf/logging.properties
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/Users/andrewburpee/desktop/tomcat/endorsed
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:24:18 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/Users/andrewburpee/desktop/tomcat/temp
+Feb 29, 2016 10:24:18 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/andrewburpee/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Feb 29, 2016 10:24:19 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:24:19 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:24:19 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 777 ms
+Feb 29, 2016 10:24:19 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Feb 29, 2016 10:24:19 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.68
+Feb 29, 2016 10:24:19 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs
+Feb 29, 2016 10:24:19 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs has finished in 364 ms
+Feb 29, 2016 10:24:19 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples
+Feb 29, 2016 10:24:20 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples has finished in 607 ms
+Feb 29, 2016 10:24:20 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager
+Feb 29, 2016 10:24:20 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager has finished in 88 ms
+Feb 29, 2016 10:24:20 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager
+Feb 29, 2016 10:24:20 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager has finished in 68 ms
+Feb 29, 2016 10:24:20 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT
+Feb 29, 2016 10:24:20 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT has finished in 50 ms
+Feb 29, 2016 10:24:20 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone
+Feb 29, 2016 10:24:20 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Feb 29, 2016 10:24:20 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone has finished in 223 ms
+Feb 29, 2016 10:24:20 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:24:20 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:24:20 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1467 ms
+Feb 29, 2016 10:33:00 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone-standalone-webapp
+Feb 29, 2016 10:33:00 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone-standalone-webapp has finished in 126 ms
+Feb 29, 2016 10:33:01 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:33:01 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:33:01 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Feb 29, 2016 10:33:02 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:33:02 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:33:02 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:33:02 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.68
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Feb 8 2016 20:25:54 UTC
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.68.0
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Mac OS X
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            10.10.5
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          x86_64
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/jre
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.8.0_73-b02
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/Users/andrewburpee/desktop/tomcat/conf/logging.properties
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/Users/andrewburpee/desktop/tomcat/endorsed
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:33:03 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/Users/andrewburpee/desktop/tomcat/temp
+Feb 29, 2016 10:33:03 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/andrewburpee/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Feb 29, 2016 10:33:04 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:33:04 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:33:04 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 879 ms
+Feb 29, 2016 10:33:04 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Feb 29, 2016 10:33:04 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.68
+Feb 29, 2016 10:33:04 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs
+Feb 29, 2016 10:33:04 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs has finished in 400 ms
+Feb 29, 2016 10:33:04 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples
+Feb 29, 2016 10:33:05 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples has finished in 648 ms
+Feb 29, 2016 10:33:05 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager
+Feb 29, 2016 10:33:05 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager has finished in 104 ms
+Feb 29, 2016 10:33:05 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager
+Feb 29, 2016 10:33:05 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager has finished in 53 ms
+Feb 29, 2016 10:33:05 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT
+Feb 29, 2016 10:33:05 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT has finished in 60 ms
+Feb 29, 2016 10:33:05 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone
+Feb 29, 2016 10:33:05 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Feb 29, 2016 10:33:05 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone has finished in 299 ms
+Feb 29, 2016 10:33:05 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone-standalone-webapp
+Feb 29, 2016 10:33:05 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone-standalone-webapp has finished in 43 ms
+Feb 29, 2016 10:33:05 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:33:05 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:33:05 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1687 ms
+Feb 29, 2016 10:49:43 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:49:43 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:49:43 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Feb 29, 2016 10:49:43 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:49:43 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:49:43 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:49:43 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.68
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Feb 8 2016 20:25:54 UTC
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.68.0
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Mac OS X
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            10.10.5
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          x86_64
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/jre
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.8.0_73-b02
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/Users/andrewburpee/desktop/tomcat/conf/logging.properties
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/Users/andrewburpee/desktop/tomcat/endorsed
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/Users/andrewburpee/desktop/tomcat
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/Users/andrewburpee/desktop/tomcat/temp
+Feb 29, 2016 10:49:45 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/andrewburpee/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Feb 29, 2016 10:49:45 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:49:45 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 832 ms
+Feb 29, 2016 10:49:45 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Feb 29, 2016 10:49:45 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.68
+Feb 29, 2016 10:49:45 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs
+Feb 29, 2016 10:49:46 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/docs has finished in 388 ms
+Feb 29, 2016 10:49:46 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples
+Feb 29, 2016 10:49:46 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/examples has finished in 607 ms
+Feb 29, 2016 10:49:46 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager
+Feb 29, 2016 10:49:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/host-manager has finished in 98 ms
+Feb 29, 2016 10:49:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager
+Feb 29, 2016 10:49:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/manager has finished in 59 ms
+Feb 29, 2016 10:49:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT
+Feb 29, 2016 10:49:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/ROOT has finished in 45 ms
+Feb 29, 2016 10:49:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone
+Feb 29, 2016 10:49:47 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Feb 29, 2016 10:49:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone has finished in 269 ms
+Feb 29, 2016 10:49:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone-standalone-webapp
+Feb 29, 2016 10:49:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/andrewburpee/Desktop/tomcat/webapps/viewone-standalone-webapp has finished in 37 ms
+Feb 29, 2016 10:49:47 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Feb 29, 2016 10:49:47 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Feb 29, 2016 10:49:47 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1575 ms

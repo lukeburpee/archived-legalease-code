@@ -1,0 +1,20 @@
+{
+  "name": "webapp",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "babel-plugin-transform-class-properties": "^6.11.5",
+    "mantra": "^0.1.1",
+    "material-ui": "^0.15.4",
+    "meteor-node-stubs": "~0.2.0",
+    "onsenui": "^2.0.0-rc.18",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-onsenui": "^0.7.7",
+    "react-tap-event-plugin": "^1.0.0"
+  },
+ "babel": {
+    "plugins": ["transform-class-properties"]
+}

@@ -1,0 +1,177 @@
+<md-dialog aria-label="Update">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Update</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="assets/angular-material-assets/img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="max-width:800px;max-height:810px; ">
+      <md-tabs md-selected="selectedIndex" md-dynamic-height md-border-bottom>
+        <md-tab label="New Client">
+          <md-content class="md-padding">
+          <form name="createClientForm" class="md-inline-form" novalidate>
+                    <div layout="column" layout-gt-sm="row">
+                        <md-input-container flex>
+                            <input type="text" name="clientname" ng-model="createClientForm.name"
+                                   placeholder="Client Name"
+                                   required>
+                            <div ng-messages="createClientForm.name.$error"
+                                 role="alert">
+                                <div ng-message="required">
+                                    <span>Client name field is required.</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                        
+                        <md-input-container flex>
+                            <input type="text" name="case" ng-model="createClientForm.case" placeholder="Case"
+                                   required>
+                            <div ng-messages="createClientForm.case.$error"
+                                 role="alert">
+                                <div ng-message="required">
+                                    <span>Case field is required.</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div layout="column" layout-gt-xs="row">
+                        <md-input-container flex>
+                            <input type="text" name="review" ng-model="createClientForm.review" placeholder="Review">
+                        </md-input-container>
+                        <md-input-container flex>
+                            <md-select ng-model="createClientForm.users" ng-model-options="{trackBy: '$value.id'}" placeholder="Users" multiple>
+                                <md-option ng-repeat="user in currentUser.subordinates" ng-value="user">
+                                    {{user.name}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </form>
+          </md-content>
+        </md-tab>
+        <md-tab label="New Review">
+          <md-content class="md-padding">
+            <form name="createReviewForm" class="md-inline-form" novalidate>
+                <div layout="column" layout-gt-sm="row">
+                <md-input-container ng-hide="createClientForm.name" flex>
+                            <md-select placeholder="Client" ng-model="createReviewForm.client">
+                                <md-option ng-repeat="client in currentUser.clients" value="{{client._id}}">
+                                    {{client.name}}
+                                </md-option>
+                            </md-select>
+                </md-input-container>
+                </div>
+                    <div layout="column" layout-gt-sm="row">
+                        <md-input-container flex>
+                            <input type="text" name="reviewname" ng-model="createReviewForm.name"
+                                   placeholder="Review Name"
+                                   required>
+                            <div ng-messages="createReviewForm.name.$error"
+                                 role="alert">
+                                <div ng-message="required">
+                                    <span>Review Name field is required.</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container flex>
+                            <input type="text" name="case" ng-model="createReviewForm.case" placeholder="Case"
+                                   required>
+                            <div ng-messages="createReviewForm.case.$error"
+                                 role="alert">
+                                <div ng-message="required">
+                                    <span>Case field is required.</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div layout="column" layout-gt-sm="row">
+                        <md-input-container flex>
+                            <md-select placeholder="Users" ng-model="createClientForm.users" ng-model-options="{trackBy: '$value.id'}" multiple>
+                                <md-option ng-repeat="user in currentUser.subordinates" ng-value="user">
+                                    {{user.name}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </form>
+          </md-content>
+        </md-tab>
+        <md-tab label="New User">
+          <md-content class="md-padding">
+            <form name="createUserForm" class="md-inline-form" novalidate>
+                    <div layout="column" layout-gt-sm="row">
+                        <md-input-container flex>
+                            <md-select placeholder="User Role" ng-model="createUserForm.role">
+                                <md-option ng-repeat="role in allowedRoles" value="{{role}}">
+                                    {{role}}
+                                </md-option>
+                            </md-select>
+                    </div>
+                    <div layout="column" layout-gt-sm="row">
+                        <md-input-container flex>
+                            <input type="text" name="firstname" ng-model="createUserForm.firstname"
+                                   placeholder="Firstname"
+                                   required>
+                            <div ng-messages="createUserForm.firstname.$error"
+                                 role="alert">
+                                <div ng-message="required">
+                                    <span>Firstname field is required.</span>
+                                </div>
+                            </div>
+                    </md-input-container>
+                    <md-input-container flex>
+                            <input type="text" name="lastname" ng-model="createUserForm.lastname" placeholder="Lastname"
+                                   required>
+                            <div ng-messages="createUserForm.lastname.$error"
+                                 role="alert">
+                                <div ng-message="required">
+                                    <span>Lastname field is required.</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div layout="column" layout-gt-sm="row">
+                        <md-input-container ng-hide="createClientForm.client"flex>
+                            <md-select placeholder="Client" ng-model="createUserForm.client">
+                                <md-option ng-repeat="client in currentUser.clients" value="{{client.name}}">
+                                    {{client.name}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-input-container flex>
+                            <md-select placeholder="Review" ng-model="createUserForm.review">
+                                <md-option ng-repeat="review in currentUser.reviews" value="{{review.name}}">
+                                    {{review.name}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </form>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <md-button type="submit" ng-hide='selectedIndex != 0' ng-click="createClient()" class="md-raised md-accent" aria-label="Submit"
+        ng-disabled="createClientForm.$invalid || createClientForm.$pristine">
+                        Create Client
+    </md-button>
+            <md-button type="submit" ng-hide='selectedIndex != 1' ng-click="createReview()" class="md-raised md-accent" aria-label="Submit"
+        ng-disabled="createReviewForm.$invalid || createReviewForm.$pristine">
+                        Create Review
+    </md-button>
+            <md-button type="submit" ng-hide='selectedIndex != 2' ng-click="createUser()" class="md-raised md-accent" aria-label="Submit"
+        ng-disabled="createUserForm.$invalid || createUserForm.$pristine">
+                        Create User
+    </md-button>
+    <md-button type="submit" ng-click="createAll()" class="md-raised md-accent" aria-label="Submit"
+        ng-disabled="createAllForm.$invalid || createAllForm.$pristine">
+                        Create All
+    </md-button>
+  </form>
+</md-dialog>

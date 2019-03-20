@@ -1,0 +1,231 @@
+FROM frolvlad/alpine-glibc 
+
+ENV PYTHON_VERSION=2.7.13 \
+	SPARK_VERSION=2.1.0 \
+	SPARK_HADOOP_VERSION=2.7 \
+	PYTHON_VERSION=2.7.13 \
+	OPENCV_VERSION=3.1.0 \
+	PYTHON_PIP_VERSION=9.0.1 \
+	LIBPST_VERSION=0.6.66 \
+	IGRAPH_VERSION=0.7.1 \
+	NUMPY_VERSION=1.11.2 \
+	DASK_VERSION=0.5.0 \
+	SIX_VERSION=1.7.3 \
+	NETWORK_VERSION=1.8 \
+	SKL_VERSION=0.17 \
+	IGRAPH_VERSION=0.6.5 \
+	MITIE_VERSION=0.4 
+
+ENV IGRAPH_DIR=igraph-$IGRAPH_VERSION \
+	LIBPST_DIR=libpst-$LIBPST_VERSION \
+	SPARK_DIR=spark-$SPARK_VERSION-bin-hadoop$SPARK_HADOOP_VERSION \
+	OPENCV_DIR=opencv-$OPENCV_VERSION \
+	NUMPY_DIR=numpy-$NUMPY_VERSION \
+	MITIE_DIR=MITIE-$MITIE_VERSION \
+	PYTHON_DIR=Python-$PYTHON_VERSION 
+
+ENV IGRAPH_PACKAGE=$IGRAPH_DIR.tar.gz \
+	LIBPST_PACKAGE=$LIBPST_DIR.tar.gz \
+	SPARK_PACKAGE=$SPARK_DIR.tgz \
+	OPENCV_PACKAGE=$OPENCV_VERSION.zip \
+	NUMPY_PACKAGE=$NUMPY_DIR.tar.gz \
+	MITIE_PACKAGE=v$MITIE_VERSION.zip \
+	PYTHON_PACKAGE=$PYTHON_DIR.tgz 
+
+ENV GITHUB_URL=https://github.com \
+	SOURCEFORGE_URL=http://downloads.sourceforge.net \
+	PYPI_URL=https://pypi.python.org/packages/source
+
+ENV ALPINE_URL=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+	IGRAPH_URL=$SOURCEFORGE_URL/igraph/$IGRAPH_PACKAGE \
+	LIBPST_URL=http://www.five-ten-sg.com/libpst/packages/$LIBPST_PACKAGE \
+	SPARK_URL=http://mirror.vorboss.net/apache/spark/spark-$SPARK_VERSION/$SPARK_PACKAGE \
+	OPENCV_URL=$GITHUB_URL/opencv/opencv/archive/$OPENCV_PACKAGE \
+	NUMPY_URL=$SOURCEFORGE_URL/project/numpy/NumPy/$NUMPY_VERSION/$NUMPY_PACKAGE \
+	MITIE_URL=$GITHUB_URL/mit-nlp/MITIE/archive/$MITIE_PACKAGE \
+	PYTHON_URL=http://www.python.org/ftp/python/$PYTHON_VERSION/$PYTHON_PACKAGE \
+	VIRTUALENV_URL=$PYPI_URL/v/virtualenv/$VIRTUALENV_PACKAGE 
+
+ENV OPENCV_CPUCOUNT=1 \
+	GPG_KEY=C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF \
+	FETCH_PACKAGES='wget' \
+	BASE_PACKAGES='bash openjdk8 ruby libxml2 subversion expat openblas sqlite arpack libffi ncurses gmp freetype openblas gfortran ffmpeg libpng ca-certificates tesseract-ocr emacs libjpeg openssl supervisor procps pkgconfig pkgconf tk bzip2 flex libgsf' \
+	BUILD_PACKAGES='build-base cmake make expat-dev sqlite-dev ncurses-dev bzip2-dev tk-dev libffi-dev gcc g++ gd-dev automake autoconf libxml2-dev flex-dev byacc openblas-dev arpack-dev openblas-ilp64 gmp-dev syslinux-dev openblas-dev linux-headers file libxml2-dev libjpeg-turbo-dev tiff-dev ffmpeg-dev pax-utils readline-dev openssl-dev libpng-dev libgsf-dev' \
+	PYTHON_BASE_PACKAGES="scipy matplotlib pandas" \
+	PYTHON_PACKAGES="supervisor python-dateutil pymongo chardet reverend six>=${SIX_VERSION} dill networkx>=${NETWORK_VERSION} dask[array]>=${DASK_VERSION} scikit-learn==${SKL_VERSION} scikit-image nose pytesseract exifread Pillow pysparkling phonenumbers textblob olefile langdetect https://github.com/mattgwwalker/msg-extractor/zipball/master"
+
+ENV JAVA_HOME=/usr/lib/jvm/default-jvm \
+	BASE_PATH=/usr/src/app \
+	LOCAL_PATH=/usr/local \
+	SYSTEM_SITEPATH=/usr/x86_64-alpine-linux-musl \
+	ALPINE_REPO_PATH=/etc/apk/repositories
+
+ENV VIRTUALENV_NAME='python-packages' \
+	LOCAL_PYTHON_NAME='.localpython'
+
+ENV PATH=$LOCAL_PATH/bin:$JAVA_HOME/bin:$PATH \
+	OCV_PACKAGEPATH=$BASE_PATH/$OPENCV_PACKAGE \
+	OCV_DIRPATH=$BASE_PATH/$OPENCV_DIR \
+	PYTHON_PACKAGEPATH=$BASE_PATH/$PYTHON_PACKAGE \
+	PYTHON_DIRPATH=$BASE_PATH/$PYTHON_DIR \
+	LIBPST_PACKAGEPATH=$BASE_PATH/$LIBPST_PACKAGE \
+	LIBPST_DIRPATH=$BASE_PATH/$LIBPST_DIR \
+	NUMPY_PACKAGEPATH=$BASE_PATH/$NUMPY_PACKAGE \
+	NUMPY_DIRPATH=$BASE_PATH/$NUMPY_DIR \
+	MITIE_PACKAGEPATH=$BASE_PATH/$MITIE_PACKAGE \
+	MITIE_DIRPATH=$LOCAL_PATH/$MITIE_DIR \
+	SPARK_PACKAGEPATH=$BASE_PATH/$SPARK_PACKAGE \
+	SPARK_DIRPATH=$LOCAL_PATH/$SPARK_DIR \
+	IGRAPH_PACKAGEPATH=$BASE_PATH/$IGRAPH_PACKAGE \
+	IGRAPH_DIRPATH=$BASE_PATH/$IGRAPH_DIR \
+	LOCAL_PYTHON_PATH=$BASE_PATH/$LOCAL_PYTHON_NAME \
+	VIRTUALENV_PATH=$BASE_PATH/$VIRTUALENV_NAME 
+
+ENV VIRTUALENV_ACTIVATE=$VIRTUALENV_PATH/bin/activate
+
+ENV PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$VIRTUALENV_PATH/lib/pkgconfig/ 
+
+WORKDIR $BASE_PATH
+
+ADD alpine-headers/sys $SYSTEM_SITEPATH/include/sys/
+ADD alpine-headers/fpu_control.h $SYSTEM_SITEPATH/include/
+ADD sysdep1.h $BASE_PATH/
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+RUN echo @testing $ALPINE_URL >> $ALPINE_REPO_PATH \
+    && apk add --update --no-cache $BASE_PACKAGES $BUILD_PACKAGES $FETCH_PACKAGES \
+    && update-ca-certificates \
+    && rm /bin/sh \
+    && ln -s /bin/bash /bin/sh \
+    && ln -s /usr/include/locale.h /usr/include/xlocale.h \
+	&& wget $IGRAPH_URL \
+	&& wget $LIBPST_URL \
+	&& wget $SPARK_URL \
+	&& wget $OPENCV_URL \
+	&& wget $NUMPY_URL \
+	&& wget $MITIE_URL \
+	&& wget $PYTHON_URL \
+	&& unzip -q $OCV_PACKAGEPATH \
+	&& unzip -q $MITIE_PACKAGEPATH -d $LOCAL_PATH \
+	&& tar -xzf $PYTHON_PACKAGEPATH \
+	&& tar -xzf $IGRAPH_PACKAGEPATH \
+	&& tar -xzf $NUMPY_PACKAGEPATH \
+	&& tar -xzf $LIBPST_PACKAGEPATH \
+	&& tar -C $LOCAL_PATH/ -zxf $SPARK_PACKAGEPATH \
+	&& ln -s $SPARK_DIRPATH/ $LOCAL_PATH/spark \
+	&& sed -i 's/nohup --/nohup/g' $LOCAL_PATH/spark/sbin/spark-daemon.sh \
+	&& rm $IGRAPH_DIRPATH/src/f2c/sysdep1.h \
+	&& mv sysdep1.h $IGRAPH_DIRPATH/src/f2c/sysdep1.h \
+	&& rm $PYTHON_PACKAGEPATH \
+    && rm $IGRAPH_PACKAGEPATH \
+	&& rm $NUMPY_PACKAGEPATH \
+	&& rm $OCV_PACKAGEPATH \
+	&& rm $SPARK_PACKAGEPATH \
+	&& rm $MITIE_PACKAGEPATH \
+	&& rm $LIBPST_PACKAGEPATH \
+	&& mkdir .localpython \
+	&& cd $PYTHON_DIRPATH \
+	&& ./configure \
+		--prefix=$LOCAL_PYTHON_PATH \
+		--with-ensurepip \
+		--with-system-expat \
+		--with-system-ffi \
+		--enable-unicode=ucs4 \
+		--enable-shared \
+	&& make \
+	&& make install \
+	&& cd $BASE_PATH \
+	&& $LOCAL_PYTHON_PATH/bin/pip install --no-cache-dir virtualenv \
+	&& $LOCAL_PYTHON_PATH/bin/virtualenv $VIRTUALENV_NAME --python=$LOCAL_PYTHON_EXE --system-site-packages \
+	&& ln -s $LOCAL_PYTHON_PATH/include/python2.7/* $VIRTUALENV_PATH/include/ \
+	&& source $VIRTUALENV_ACTIVATE \
+	&& cd $IGRAPH_DIRPATH \
+	&& ./configure \
+		--prefix=$VIRTUALENV_PATH \
+	&& make \
+	&& make install \
+	&& pip install --no-cache-dir python-igraph==$IGRAPH_VERSION \
+	&& pip install --no-cache-dir nodeenv \
+	&& nodeenv 'node-packages' -p \
+	&& pip install --no-cache-dir cython \
+	&& export NPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) \
+    && cd $NUMPY_DIRPATH \
+    && cp site.cfg.example site.cfg \
+    && echo -en "\n[openblas]\nlibraries = openblas\nlibrary_dirs = /usr/lib\ninclude_dirs = /usr/include\n" >> site.cfg \
+    && python setup.py build -j ${NPROC} --fcompiler=gfortran install \
+	&& pip install --no-cache-dir $PYTHON_BASE_PACKAGES \
+	&& pip install --no-cache-dir $PYTHON_PACKAGES \
+    && python -m textblob.download_corpora \
+    && cd $OCV_DIRPATH \
+	&& mkdir build \
+    && cd build \
+	&& cmake \
+	    -DCMAKE_BUILD_TYPE=RELEASE \
+	    -DCMAKE_INSTALL_PREFIX=$VIRTUALENV_PATH \
+	    -D ENABLE_PRECOMPILED_HEADERS=OFF \
+    	-DWITH_FFMPEG=OFF \
+    	-DBUILD_opencv_highgui=OFF \
+    	-DWITH_QT=OFF \
+    	-DWITH_GTK=OFF \
+    	-DWITH_IPP=NO \
+    	-DWITH_OPENEXR=NO .. \
+    	-DPYTHON2_EXECUTABLE=$VIRTUALENV_PATH/bin/python2.7 \
+    	-DPYTHON2_INCLUDE_DIR=$VIRTUALENV_PATH/include \
+    	-DPYTHON2_LIBRARY=$VIRTUALENV_PATH/lib/python2.7 \
+    	-DPYTHON2_PACKAGES_PATH=$VIRTUALENV_PATH/lib/python2.7/site-packages \
+		.. \
+	&& make \
+	&& make install \
+	&& cd $MITIE_DIRPATH \
+	&& make MITIE-models \
+	&& cd tools/ner_stream \
+	&& mkdir build \
+	&& cd build \
+	&& cmake .. \
+	&& cmake --build . --config Release \
+	&& cd $MITIE_DIRPATH/mitielib \
+	&& make \
+	&& mkdir build \
+	&& cd build \
+	&& cmake .. \
+	&& cmake --build . --config Release --target install \
+	&& cd $LIBPST_DIRPATH \
+	&& ./configure --enable-python=no \
+	&& make \
+	&& make install \
+	&& rm -r $PYTHON_DIRPATH \
+	&& rm -r $OCV_DIRPATH \
+    && rm -r $NUMPY_DIRPATH \
+	&& rm -r $IGRAPH_DIRPATH \
+	&& rm -r $LIBPST_DIRPATH \
+	&& apk del $FETCH_PACKAGES $BUILD_PACKAGES 
+
+RUN ln -s $LOCAL_PATH/MITIE-$MITIE_VERSION/mitielib/libmitie.a $BASE_PATH/libmitie.a \
+	&& ln -s $LOCAL_PATH/MITIE-$MITIE_VERSION/mitielib/libmitie.so $BASE_PATH/libmitie.so \
+	&& ln -s $LOCAL_PATH/MITIE-$MITIE_VERSION/mitielib/mitie.py $BASE_PATH/mitie.py
+
+ADD start-spark.sh $LOCAL_PATH/spark
+
+ADD package.json $BASE_PATH
+ADD server.js $BASE_PATH
+ADD route.js $BASE_PATH
+ADD shellHelper.js $BASE_PATH
+
+RUN apk add --no-cache libstdc++ \
+	&& source $VIRTUALENV_ACTIVATE \
+	&& npm install \
+	&& npm cache clean
+
+RUN $LOCAL_PYTHON_PATH/bin/virtualenv --relocatable $VIRTUALENV_NAME
+RUN tar -czvf python-packages.tar.gz python-packages \
+	&& rm -r python-packages
+RUN mkdir /usr/src/app/python-packages
+
+VOLUME $LOCAL_PATH/lib/
+
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VIRTUALENV_PATH/lib
+
+EXPOSE 5555 8080 7077 9080 9081 57600 7600 8181 9990 4040 55200 45700
+ADD main-startup.sh /usr/src/app/
+RUN chmod +x /usr/src/app/main-startup.sh && apk add pv
+CMD /usr/src/app/main-startup.sh

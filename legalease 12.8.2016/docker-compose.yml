@@ -1,0 +1,128 @@
+version: '2'
+services:
+  app:
+    image: burpee/app
+    build: ./app
+    ports:
+      - "3000:3000"
+    environment:
+      - ROOT_URL=http://localhost:3000
+      - MAIL_URL=smtp://legalease.software@gmail.com:xxxxxx@smtp.gmail.com:465/
+      - MONGO_URL=mongodb://mongo1:27017,mongo2:27017,mongo3:27017/app?replicaSet=appRS
+      - MONGO_OPLOG_URL=mongodb://mongo1:27017,mongo2:27017,mongo3:27017/local?replicaSet=appRS
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+      - elastic1
+      - elastic2
+      - unoconv
+      - tika
+      - corenlp
+    volumes:
+      - ./app/:/opt/app
+    volumes_from:
+      - node-modules
+  node-modules:
+    image: burpee/node-modules
+    build: ./images/node-modules
+    volumes:
+      - /opt/app/node_modules
+  job-worker:
+    image: burpee/job-worker
+    build: ./images/job-worker
+    depends_on:
+      - app
+      - unoconv
+      - tika
+  mongo1:
+    image: mongo:3.2
+    command: --smallfiles --replSet appRS --quiet
+    volumes_from:
+      - mongo-data1
+  mongo2:
+    image: mongo:3.2
+    command: --smallfiles --replSet appRS --quiet
+    volumes_from:
+      - mongo-data2
+  mongo3:
+    image: mongo:3.2
+    command: --smallfiles --replSet appRS --quiet
+    volumes_from:
+      - mongo-data3
+  mongo-data1:
+    image: busybox
+    volumes:
+      - /data/db
+  mongo-data2:
+    image: busybox
+    volumes:
+      - /data/db
+  mongo-data3:
+    image: busybox
+    volumes:
+      - /data/db
+  mongo-config:
+    image: burpee/mongo-replicaset-setup
+    build: ./images/mongo-replicaset-setup
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+    environment:
+      DATABASE: app
+      REPLICA_SET_ID: appRS
+      PRIMARY_MEMBER: mongo1:27017
+      SECONDARY_MEMBERS: mongo2:27017,mongo3:27017
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+  elastic1:
+    image: elasticsearch:1.5.2
+    ports: 
+     - '9200:9200'
+     - '9300:9300'
+    entrypoint: ['elasticsearch', '-Des.cluster.name=appCL', '-Des.cluster.routing.allocation.disk.threshold_enabled', 'false']
+    volumes_from:
+      - elastic-data1
+  elastic2:
+    image: elasticsearch:1.5.2
+    ports:
+      - '9201:9200'
+      - '9301:9300'
+    entrypoint: ['elasticsearch', '-Des.cluster.name=appCL', '-Des.cluster.routing.allocation.disk.threshold_enabled', 'false']
+    volumes_from:
+      - elastic-data2
+  elastic-data1:
+    image: busybox
+    volumes:
+      - /usr/share/elasticsearch/data
+  elastic-data2:
+    image: busybox
+    volumes:
+      - /usr/share/elasticsearch/data
+  mongo-elastic-sync:
+    image: burpee/mongo-elastic-sync
+    build: ./images/mongo-elastic-sync
+    depends_on:
+      - mongo-config
+      - mongo1
+      - mongo2
+      - mongo3
+      - elastic1
+      - elastic2
+  unoconv:
+    image: burpee/unoconv-worker
+    build: ./images/unoconv-worker
+    ports:
+      - "3121:3121"
+  tika:
+    image: logicalspark/docker-tikaserver
+    ports:
+      - "9998:9998"
+  corenlp:
+    image: motiz88/corenlp
+    ports:
+      - "9000:9000"
+

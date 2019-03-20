@@ -1,0 +1,10 @@
+FROM tzapu/development-meteor
+RUN apt-get install -y sudo && \
+	adduser user && \
+	echo "user ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/user && \
+	chmod 0440 /etc/sudoers.d/user 
+WORKDIR /usr/src/app/
+
+ADD ["config/package.json", "config/mobile-config.js", "config/.babelrc", "config/settings.json", "/usr/src/app/"]
+
+CMD ["su", "user", "-c", "meteor --release 1.4.2.3 --settings /usr/src/app/settings.json"]

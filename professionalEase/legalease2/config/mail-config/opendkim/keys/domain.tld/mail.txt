@@ -1,0 +1,2 @@
+mail._domainkey	IN	TXT	( "v=DKIM1; k=rsa; "
+	  "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDEmoGgwotx6Xvx5MymMHGDjW+le46kwdKhbj+Ga0KbDwC+AGSsp2/JuF4gkhrh9EXRhaaIEZleZILgZfZ3HZSj7eljevCwrPKrXS550YfR6SugnT7eWN36mApb3Ja6r6ayIotCLihlEFjVwL4VAfnXd7v7/edCfLF+BU9dDrUOIwIDAQAB" )  ; ----- DKIM key mail for domain.tld

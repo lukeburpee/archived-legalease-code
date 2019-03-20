@@ -1,0 +1,50 @@
+FROM singularities/spark
+MAINTAINER legalease.software@gmail.com
+
+ENV MPLCONFIGDIR=/tmp/matplotlib-root \
+	BUILD_PACKAGES='wget make cmake cmake-data git curl pkg-config gcc python-pip cpp cpp-4.9 g++ g++-4.9 gcc-4.9 gyp node-gyp libavformat-dev libpng-dev libavcodec-dev libavfilter-dev libswscale-dev libjpeg-dev libtiff-dev libjasper-dev zlib1g-dev libopenexr-dev libxine2-dev libeigen3-dev libtbb-dev libpython-dev python-dev libjpeg-dev libjpeg62-turbo-dev libfreetype6-dev libblas-dev liblapack-dev libatlas-base-dev libxft-dev libgtk2.0-dev libigraph0-dev' \
+	BASE_PACKAGES='zip kmod readpst libpst4 python-dateutil python-chardet nodejs unzip libjbig0 libtiff5 libpng3 gfortran tesseract-ocr emacs python-skimage python-opencv python-matplotlib python-sympy python-nose apertium-en-es p7zip-full' \
+	LOOSE_PACKAGES='libx11-doc texlive-fonts-extra-doc texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc' \
+	PIP_PACKAGES='reverend dill numpy>=1.7.2 scipy>=0.9.0 six>=1.7.3 networkx>=1.8 dask[array]>=0.5.0 cython Pillow>=2.1.0 pytesseract scikit-image exifread scikit-learn==0.17 pandas pysparkling phonenumbers textblob olefile python-igraph geoip2 langdetect https://github.com/mattgwwalker/msg-extractor/zipball/master'
+
+WORKDIR /usr/src/app
+# Ports
+
+EXPOSE 6000 6066 7070 8080 50070
+COPY ./config/package.json /usr/src/app/
+
+RUN apt-get update && apt-get install -y \
+	sudo \
+	&& sudo apt-get install -y $BUILD_PACKAGES $BASE_PACKAGES \
+	&& sudo pip install $PIP_PACKAGES \
+	&& sudo python -m textblob.download_corpora \
+	&& sudo python -c "import matplotlib;print(matplotlib.get_cachedir())" \
+	&& wget http://apertium.projectjj.com/apt/install-nightly.sh \
+	&& chmod +x install-nightly.sh \
+	&& ./install-nightly.sh \
+	&& cd /usr/src/app \
+	&& git clone https://github.com/mit-nlp/MITIE \
+	&& cd MITIE/tools/ner_stream \
+	&& mkdir build \
+	&& cd build \
+	&& cmake .. \
+	&& cmake --build . --config Release \
+	&& cd /usr/src/app/MITIE/mitielib \
+	&& make \
+	&& mkdir build \
+	&& cd build \
+	&& cmake .. \
+	&& cmake --build . --config Release --target install \
+	&& cd /usr/src/app \
+	&& ln -s /usr/src/app/MITIE/mitielib/libmitie.a libmitie.a \
+	&& ln -s /usr/src/app/MITIE/mitielib/libmitie.so libmitie.so \
+	&& ln -s /usr/src/app/MITIE/mitielib/mitie.py mitie.py \
+    && apt-get remove -y \
+    	$BUILD_PACKAGES \
+    	$LOOSE_PACKAGES \
+    && apt-get clean \
+	&& rm -rf /var/lib/apt/lists/*
+
+ADD ./pst-master /usr/src/app
+
+CMD nodejs server.js

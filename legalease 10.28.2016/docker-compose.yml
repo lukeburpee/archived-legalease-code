@@ -1,0 +1,77 @@
+version: '2'
+services:
+  app:
+    image: tzapu/development-meteor:1.4.2
+    command: meteor --unsafe-perm --settings settings.json
+    working_dir: /home/app/
+    volumes:
+      - ./app/:/home/app
+    ports: 
+      - '3000:3000'
+    environment:
+      - ROOT_URL=http://localhost:3000
+      - MONGO_URL=mongodb://mongo1:27017,mongo2:27017,mongo3:27017/app?replicaSet=appRS
+      - MONGO_OPLOG_URL=mongodb://mongo1:27017,mongo2:27017,mongo3:27017/local?replicaSet=appRS
+      - DELAY=30
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+      - elastic1
+      - elastic2
+      - redis
+      - unoconv
+      - tika
+  mongo1:
+    image: mongo:3.2
+    command: --smallfiles --replSet appRS --quiet
+  mongo2:
+    image: mongo:3.2
+    command: --smallfiles --replSet appRS --quiet
+  mongo3:
+    image: mongo:3.2
+    command: --smallfiles --replSet appRS --quiet
+  mongo-config:
+    image: wdhif/mongo-replicaset-setup
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+    environment:
+      DATABASE: app
+      REPLICA_SET_ID: appRS
+      PRIMARY_MEMBER: mongo1:27017
+      SECONDARY_MEMBERS: mongo2:27017,mongo3:27017
+  elastic1:
+    image: elasticsearch:1.5.2
+    ports: 
+     - '9200:9200'
+     - '9300:9300'
+    entrypoint: ['elasticsearch', '-Des.cluster.name=appCL', '-Des.cluster.routing.allocation.disk.threshold_enabled', 'false']
+    volumes:
+      - ./data/elasticsearch/data1/:/usr/share/elasticsearch/data
+  elastic2:
+    image: elasticsearch:1.5.2
+    ports:
+      - '9201:9200'
+      - '9301:9300'
+    entrypoint: ['elasticsearch', '-Des.cluster.name=appCL', '-Des.cluster.routing.allocation.disk.threshold_enabled', 'false']
+    volumes:
+      - ./data/elasticsearch/data2/:/usr/share/elasticsearch/data
+  redis:
+    image: redis:2.8
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./data/redis/:/data
+  unoconv:
+    image: burpee/unoconv-worker
+    build: ./images/unoconv-worker
+    ports:
+      - "3121:3121"
+  tika:
+    image: burpee/tika-worker
+    build: ./images/tika-worker
+    ports:
+      - "9998:9998"
+

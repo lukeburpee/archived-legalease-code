@@ -1,0 +1,126 @@
+version: '2'
+services:
+  app:
+    image: burpee/app:v1
+    ports: 
+      - '3000:3000'
+    build:
+      context: ./images/app
+      dockerfile: Dockerfile
+    environment:
+      - ROOT_URL=http://localhost:3000
+      - MONGO_URL=mongodb://mongo1:27017,mongo2:27017,mongo3:27017/app?replicaSet=nuxeoRS
+      - MONGO_OPLOG_URL=mongodb://mongo1:27017,mongo2:27017,mongo3:27017/local?replicaSet=nuxeoRS
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+      - elastic1
+      - elastic2
+      - nuxeo
+      - redis
+    volumes:
+      - ./images/app/client:/opt/app/client
+      - ./images/app/server:/opt/app/server
+      - ./images/app/lib:/opt/app/lib
+      - ./images/app/public:/opt/app/public
+  nuxeo:
+    image: burpee/nuxeo:v1
+    build:
+      context: ./images/nuxeo
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+      - '8787:8787'
+    restart: always
+    volumes_from: 
+      - nuxeo-config
+      - nuxeo-logs
+    environment:
+      - NUXEO_TEMPLATES=postgresql,mongodb,gridfsbinaries
+      - NUXEO_DB_USER=Administrator
+      - NUXEO_DB_PASSWORD=Administrator
+      - NUXEO_AUTOMATION_TRACE=true
+      - NUXEO_LOG=/var/log/nuxeo
+      - NUXEO_DATA=/var/lib/nuxeo/data
+      - NUXEO_ES_HOSTS=elastic1:9300,elastic2:9301
+      - NUXEO_ES_CLUSTER_NAME=nuxeoCL
+      - NUXEO_ES_INDEX_NAME=nuxeo
+      - NUXEO_ES_REPLICAS=0
+      - NUXEO_ES_SHARDS=5
+      - NUXEO_REDIS_HOST=redis
+      - NUXEO_REDIS_PORT=6379
+    depends_on:
+      - postgres
+      - mongo1
+      - mongo2
+      - mongo3
+      - redis
+      - elastic1
+      - elastic2
+      - nuxeo-config
+      - nuxeo-logs
+      - nuxeo-data
+  nuxeo-config:
+    image: burpee/nuxeo-config:v1
+    build:
+      context: ./images/nuxeo-config
+      dockerfile: Dockerfile
+  nuxeo-logs:
+    image: busybox
+    volumes:
+      - ./logs/nuxeo:/var/log/nuxeo
+  nuxeo-data:
+    image: busybox
+    volumes:
+      - ./data/nuxeo:/var/lib/nuxeo/data
+  postgres:
+    image: postgres
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=Administrator
+      - POSTGRES_PASSWORD=Administrator
+      - POSTGRES_DB=nuxeo
+  mongo1:
+    image: mongo:3.2
+    command: --smallfiles --replSet nuxeoRS --quiet
+  mongo2:
+    image: mongo:3.2
+    command: --smallfiles --replSet nuxeoRS --quiet
+  mongo3:
+    image: mongo:3.2
+    command: --smallfiles --replSet nuxeoRS --quiet
+  mongo-config:
+    image: wdhif/mongo-replicaset-setup
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+    environment:
+      DATABASE: nuxeo
+      REPLICA_SET_ID: nuxeoRS
+      PRIMARY_MEMBER: mongo1:27017
+      SECONDARY_MEMBERS: mongo2:27017,mongo3:27017
+  elastic1:
+    image: elasticsearch:1.5.2
+    ports: 
+     - '9200:9200'
+     - '9300:9300'
+    entrypoint: ['elasticsearch', '-Des.cluster.name=nuxeoCL', '-Des.cluster.routing.allocation.disk.threshold_enabled', 'false']
+    volumes:
+      - ./data/elasticsearch/data1/:/usr/share/elasticsearch/data
+  elastic2:
+    image: elasticsearch:1.5.2
+    ports:
+      - '9201:9200'
+      - '9301:9300'
+    entrypoint: ['elasticsearch', '-Des.cluster.name=nuxeoCL', '-Des.cluster.routing.allocation.disk.threshold_enabled', 'false']
+    volumes:
+      - ./data/elasticsearch/data2/:/usr/share/elasticsearch/data
+  redis:
+    image: redis:2.8
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./data/redis/:/data

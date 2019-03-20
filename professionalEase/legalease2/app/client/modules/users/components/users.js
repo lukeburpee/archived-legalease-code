@@ -1,0 +1,34 @@
+import React from 'react';
+import Page from './../../interface/components/page';
+import LeftToolbar from './users.left.toolbar';
+import LeftContent from './users.left.content';
+import RightToolbar from './users.right.toolbar';
+import RightContent from './users.right.content';
+import MainToolbar from './users.main.toolbar';
+import MainContent from './users.main.content';
+
+const Users = ({context}) => (
+	<Page 
+		left={true}
+		right={true}
+		viewer={true}
+		leftTool={<LeftToolbar/>}
+		leftContent={<LeftContent/>}
+		rightTool={<RightToolbar/>}
+		rightContent={<RightContent/>}
+		mainTool={<MainToolbar/>}
+		mainContent={<MainContent/>}
+		chatBox={false}
+		chatBoxMin={true}
+		chatBoxContent="chat box"
+		utilities={true}
+		utilitiesOpen={false}
+		utilitiesMainContent="utilities main content"
+		utilitiesToolbarContent="utilities toolbar"
+		utilitiesBottomContent="utilities bottom content"
+		meeting={false}
+		meetingCount={0}
+		{...context}/>
+);
+
+export default Users;

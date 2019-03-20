@@ -1,0 +1,82 @@
+FROM frolvlad/alpine-glibc 
+
+ENV SPARK_VERSION=2.1.0 \
+	SPARK_HADOOP_VERSION=2.7 \
+	LIBPST_VERSION=0.6.66 \
+	SCALA_VERSION=2.10 \
+	MONGO_CONNECTOR_VERSION=2.0.0 \
+	ELASTIC_CONNECTOR_VERSION=0.4.2
+
+ENV LIBPST_DIR=libpst-$LIBPST_VERSION \
+	SPARK_DIR=spark-$SPARK_VERSION-bin-hadoop$SPARK_HADOOP_VERSION 
+
+ENV LIBPST_PACKAGE=$LIBPST_DIR.tar.gz \
+	SPARK_PACKAGE=$SPARK_DIR.tgz 
+
+ENV ALPINE_URL=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+	LIBPST_URL=http://www.five-ten-sg.com/libpst/packages/$LIBPST_PACKAGE \
+	SPARK_URL=http://mirror.vorboss.net/apache/spark/spark-$SPARK_VERSION/$SPARK_PACKAGE 
+
+ENV OPENCV_CPUCOUNT=1 \
+	GPG_KEY=C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF \
+	FETCH_PACKAGES='wget' \
+	BASE_PACKAGES='bash openjdk8 libgphoto2 pv ruby libdc1394 libxml2 subversion expat openblas sqlite arpack libffi ncurses gmp freetype openblas gfortran ffmpeg libpng ca-certificates tesseract-ocr emacs libjpeg openssl supervisor procps pkgconfig pkgconf tk bzip2 flex libgsf gstreamer0.10' \
+	BUILD_PACKAGES='build-base cmake make expat-dev sqlite-dev ncurses-dev bzip2-dev tk-dev libffi-dev gcc g++ gd-dev automake autoconf libxml2-dev flex-dev byacc openblas-dev arpack-dev openblas-ilp64 gmp-dev syslinux-dev openblas-dev linux-headers file libxml2-dev libjpeg-turbo-dev tiff-dev ffmpeg-dev pax-utils readline-dev openssl-dev libpng-dev libgsf-dev' 
+
+ENV JAVA_HOME=/usr/lib/jvm/default-jvm \
+	BASE_PATH=/usr/src/app \
+	LOCAL_PATH=/usr/local \
+	SYSTEM_SITEPATH=/usr/x86_64-alpine-linux-musl \
+	ALPINE_REPO_PATH=/etc/apk/repositories 
+
+ENV PATH=$LOCAL_PATH/bin:$JAVA_HOME/bin:$PATH \
+	LIBPST_PACKAGEPATH=$BASE_PATH/$LIBPST_PACKAGE \
+	LIBPST_DIRPATH=$BASE_PATH/$LIBPST_DIR \
+	SPARK_PACKAGEPATH=$BASE_PATH/$SPARK_PACKAGE \
+	SPARK_DIRPATH=$LOCAL_PATH/$SPARK_DIR \
+	LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$BASE_PATH/packages/python-packages/lib
+
+WORKDIR $BASE_PATH
+
+ADD alpine-headers/sys $SYSTEM_SITEPATH/include/sys/
+ADD alpine-headers/fpu_control.h $SYSTEM_SITEPATH/include/
+ADD sysdep1.h $BASE_PATH/
+
+RUN echo @testing $ALPINE_URL >> $ALPINE_REPO_PATH \
+    && apk add --update --no-cache $BASE_PACKAGES $BUILD_PACKAGES $FETCH_PACKAGES \
+    && update-ca-certificates \
+    && rm /bin/sh \
+    && ln -s /bin/bash /bin/sh \
+    && ln -s /usr/include/locale.h /usr/include/xlocale.h \
+	&& wget $LIBPST_URL \
+	&& wget $SPARK_URL \
+	&& tar -xzf $LIBPST_PACKAGEPATH \
+	&& tar -C $LOCAL_PATH/ -zxf $SPARK_PACKAGEPATH \
+	&& ln -s $SPARK_DIRPATH/ $LOCAL_PATH/spark \
+	&& sed -i 's/nohup --/nohup/g' $LOCAL_PATH/spark/sbin/spark-daemon.sh \
+	&& rm $SPARK_PACKAGEPATH \
+	&& rm $LIBPST_PACKAGEPATH \
+	&& cd $LIBPST_DIRPATH \
+	&& ./configure --enable-python=no \
+	&& make \
+	&& make install \
+	&& $LOCAL_PATH/spark/bin/spark-shell --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_CONNECTOR_VERSION} \
+	&& $LOCAL_PATH/spark/bin/spark-shell --packages TargetHolding:pyspark-elastic:${ELASTIC_CONNECTOR_VERSION} \
+	&& rm -r $LIBPST_DIRPATH \
+	&& apk del $FETCH_PACKAGES $BUILD_PACKAGES 
+
+ENV SPARK_HOME=$LOCAL_PATH/spark
+ENV PATH=$SPARK_HOME:$SPARK_HOME/bin:$PATH
+COPY start-spark.sh $SPARK_HOME/start-spark
+ADD ["package.json", "server.js", "route.js", "shellHelper.js", "${BASE_PATH}/"]
+
+VOLUME $LOCAL_PATH/lib/
+EXPOSE 5555 8080 7077 9080 9081 57600 7600 8181 9990 4040 55200 45700
+
+# Add deprecated commands
+RUN echo '#!/usr/bin/env bash' > /usr/bin/master \
+  && echo '/usr/local/spark/start-spark master' >> /usr/bin/master \
+  && chmod +x /usr/bin/master \
+  && echo '#!/usr/bin/env bash' > /usr/bin/worker \
+  && echo '/usr/local/spark/start-spark worker $1' >> /usr/bin/worker \
+  && chmod +x /usr/bin/worker

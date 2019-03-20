@@ -1,0 +1,63 @@
+<!-- SIDENAV HEADER -->
+<div class="header" layout="column" layout-align="space-between start">
+
+    <div class="logo" layout="row" layout-align="start center">
+        <span class="logo-icon">
+            <md-icon md-font-icon="icon-magnify" class="icon s24"></md-icon>
+        </span>
+        <span class="logo-text" translate="FM.SAVED_SEARCHES">Saved Searches</span>
+    </div>
+
+    <div class="account">
+        <div class="title">{{vm.userName}}</div>
+        <md-select class="account-selection simplified" ng-model="vm.selectedProject" placeholder="Select Project">
+            <md-option ng-repeat="project in vm.projects" value="{{project._id}}">{{project.name}}</md-option>
+        </md-select>
+    </div>
+
+</div>
+<!-- / SIDENAV HEADER -->
+
+<!-- SIDENAV CONTENT -->
+<div class="content">
+
+    <div class="navigation-simple" layout="column">
+        <md-button class="item" aria-label="inbox">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-folder" class="s16"></md-icon>
+                <div class="title" translate="FM.CASE_FILES">Case Files</div>
+            </div>
+        </md-button>
+
+        <md-button class="item" aria-label="starred">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-folder" class="s16"></md-icon>
+                <div class="title" translate="FM.PUBLIC_SEARCHES">Public</div>
+            </div>
+        </md-button>
+
+        <md-button class="item" aria-label="starred">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-folder" class="s16"></md-icon>
+                <div class="title" translate="FM.PRIVATE_SEARCHES">Private</div>
+            </div>
+        </md-button>
+
+        <md-button class="item" aria-label="starred">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-folder-account" class="s16"></md-icon>
+                <div class="title" translate="FM.SHARRED_WITH_ME">Sharred</div>
+            </div>
+        </md-button>
+
+        <md-button class="item" aria-label="starred">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-clock" class="s16"></md-icon>
+                <div class="title" translate="FM.RECENT">Recent</div>
+            </div>
+        </md-button>
+
+    </div>
+
+</div>
+<!-- / SIDENAV CONTENT -->

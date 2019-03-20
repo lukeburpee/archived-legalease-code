@@ -1,0 +1,175 @@
+<md-dialog aria-label="Mango (Fruit)">
+  <form name="uploadForm" id="uploadForm" enctype="multipart/form-data" ng-submit="uploader.uploadAll()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Upload Files</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="assets/angular-material-assets/img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="max-width:900px;max-height:810px; ">
+      <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="Upload Form">
+          <md-content class="md-padding">
+          <form class="md-inline-form" novalidate>
+                    <div layout="column" layout-gt-sm="row">
+                        <md-input-container flex>
+                            <input type="text" name="userId" ng-model="vm.uploadForm.userId"
+                                   placeholder="{{currentUser._id}}"
+                                   required disabled>
+                            <div ng-messages="uploadForm.userId.$error"
+                                 role="alert">
+                                <div ng-message="required">
+                                    <span>UserId Required</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container flex>
+                        <label>Client</label>
+                        <md-select ng-change='updateUrl()' ng-model='uploadForm.clientName'>
+                        <md-option ng-repeat='client in currentUser.clients' value='{{client.name}}'>
+                        {{client.name}}
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
+                    </div>
+
+                    <div layout="column" layout-gt-xs="row">
+                        <md-input-container flex>
+                        <md-radio-group ng-change='updateUrl()' ng-model='uploadForm.uploadType'>
+                        <md-radio-button value='clients'>Case Files</md-radio-button>
+                        <md-radio-button value='reviews'>Review Files</md-radio-button>
+                      </md-radio-group>
+                        </md-input-container>
+                        <div layout='column'>
+                          <md-input-container flex ng-show='uploadForm.uploadType == "caseFiles"'>
+                          <label>Case Name</label>
+                        <md-select ng-change='updateUrl()' ng-model='uploadForm.caseName'>
+                        <md-option ng-repeat='case in currentUser.cases' value='{{case.name}}'>
+                        {{case.name}}
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
+                          <md-input-container flex ng-show='uploadForm.uploadType == "reviewFiles"'>
+                              <label>Review Name</label>
+                        <md-select ng-change='updateUrl()' ng-model='uploadForm.reviewName'>
+                        <md-option ng-repeat='review in currentUser.reviews' value='{{review.name}}'>
+                        {{review.name}}
+                      </md-option>
+                    </md-select>
+                      </md-input-container>
+                        <md-input-container flex>
+                          <input type="text" name="projectPrefix" ng-model="uploadForm.projectPrefix" placeholder="Project Prefix"
+                                   required>
+                            <div ng-messages="uploadForm.projectPrefix.$error"
+                                 role="alert">
+                                <div ng-message="required">
+                                    <span>Project Prefix required</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                  </div>
+
+                    <md-input-container class="md-block">
+                        <label>Project Tags</label>
+                        <textarea ng-model="uploadForm.projectTags" columns="1" md-maxlength="150" rows="5"></textarea>
+                    </md-input-container>
+                </form>
+          </md-content>
+        </md-tab>
+        <md-tab label="Upload Status">
+          <strong>Queue Length:</strong>
+            <span ng-bind="uploader.queue.length">0</span>
+            <md-card style='max-height:750px;width:95%;overflow-y:auto;'>
+          <md-content class="md-padding">
+
+            <table class="simple" ms-responsive-table>
+              <thead md-sticky>
+              <tr>
+                <th>File Name</th>
+                <th ng-show='uploader.isHTML5'>File Path</th>
+                <th ng-show='uploader.isHTML5'>File Size</th>
+                <th ng-show='uploader.isHTML5'>File Progress</th>
+                <th>File Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>                
+              </tr>
+              <tbody>
+                <tr ng-repeat='item in uploader.queue'>
+                  <td>
+                    <strong>
+                      <span ng-bind='item.file.name'></span>
+                  </td>
+                  <td ng-show='uploader.isHTML5' ng-bind='item.file.location'></td>
+                  <td ng-show='uploader.isHTML5' nowrap ng-bind='item.file.size'></td>
+                  <td ng-show='uploader.isHTML5'>
+                    <md-progress-linear md-mode='determinate' value='{{ item.file.progress }}'>
+                  </md-progress-linear>
+                  </td>
+                  <td class='text-center'>
+                    <span ng-show='item.file.isSuccess'>
+                    </span>
+                    <span ng-show='item.file.isCancel' style='display: none;'>
+                    </span>
+                    <span ng-show='item.file.isError' style='display: none;'>
+                    </span>
+                  </td>
+                  <td nowrap>
+                    <md-button class='md-fab md-mini md-raised md-accent md-hue-5' ng-click='item.upload()' ng-disabled='item.file.isReady || item.file.isUploading || item.file.isSuccess'>
+                    <md-icon md-svg-icon='../../assets/angular-material-assets/img/icons/ic_play_arrow_24px.svg'></md-icon>
+                  </md-button>
+                    <md-button class='md-fab md-mini md-raised' ng-click='item.cancel()' ng-disabled='!item.file.isUploading' disabled>
+                    <md-icon md-svg-icon='../../assets/angular-material-assets/img/icons/pause.svg'></md-icon>
+                  </md-button>
+                    <md-button class='md-fab md-mini md-raised md-warn' ng-click='item.remove()'>
+                    <md-icon md-svg-icon='../../assets/angular-material-assets/img/icons/ic_close_24px.svg'></md-icon>
+                  </md-button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </md-content>
+        </md-card>
+        </md-tab>
+        <md-tab label="Upload History">
+          <md-content class="md-padding">
+            <h1 class="md-display-2">Tab Three</h1>
+            <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button class='md-raised'>
+      <label for='file-input'>Select File</label>
+      <input id='file-input' type='file' uploader='uploader' class='ng-hide' nv-file-select>
+      </md-button>
+      <md-button class='md-raised'>
+      <label for='directory-input'>Select Directory</label>
+      <input id='directory-input' type='file' uploader='uploader' class='ng-hide' nv-file-select nwdirectory webkitdirectory directory='' multiple>
+    </md-button>
+      <md-button class='md-raised' ng-click="uploader.clearQueue()" ng-diabled="!uploader.queue.length">
+        Remove Files
+      </md-button>
+      <md-button class='md-raised' ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading" disabled="disabled">
+      Pause Upload
+    </md-button>
+    <md-button class='md-raised' ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
+    Upload Start
+  </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

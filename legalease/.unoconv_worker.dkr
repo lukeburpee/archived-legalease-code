@@ -1,0 +1,18 @@
+FROM node:4.2
+
+MAINTAINER legalease.software@gmail.com
+ENV BASE_PACKAGES='unoconv x11vnc libqt5widgets5 xauth xvfb' \
+	BUILD_PACKAGES='build-essential libxcb-keysyms1-dev libxcb-image0-dev libxcb-shm0-dev libxcb-icccm4-dev libxcb-sync0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-render-util0-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxfixes-dev libxi-dev libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev mesa-common-dev libglu1-mesa-dev libxkbcommon-dev libxcb-xkb-dev libxslt1-dev libgstreamer-plugins-base0.10-dev'
+
+EXPOSE 3121
+
+WORKDIR /usr/src/app
+COPY ./unoconv-worker /usr/src/app/
+RUN apt-get update && apt-get -y install \
+	$BASE_PACKAGES \
+	$BUILD_PACKAGES \
+	&& tar zxvf qcad-3.12.8-linux-x86_64.tar.gz \
+    && apt-get remove -y $BUILD_PACKAGES \
+    && rm -rf /var/lib/apt/lists/*
+
+CMD node server.js

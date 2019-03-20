@@ -1,0 +1,33 @@
+{
+  "name": "paper-datatable",
+  "version": "1.0.0",
+  "description": "A [material design implementation of a data table](https://www.google.com/design/spec/components/data-tables.html). Let's call this a pretty solid beta.",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.5.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.1",
+    "gulp-inline-source": "^2.1.0",
+    "gulp-sass": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/David-Mulder/paper-datatable.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/David-Mulder/paper-datatable/issues"
+  },
+  "homepage": "https://github.com/David-Mulder/paper-datatable#readme"
+}

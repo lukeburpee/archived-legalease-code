@@ -1,0 +1,35 @@
+version: '2'
+services:
+  nuxeo:
+    image: burpee/nuxeo:v1
+    ports: ['8080:8080']
+    restart: always
+    volumes_from: 
+      - nuxeo-package-conf
+    environment:
+      - NUXEO_TEMPLATES=default,mongodb,gridfsbinaries
+      - NUXEO_ES_HOSTS=elastic1:9300,elastic2:9300
+      - NUXEO_ES_CLUSTER_NAME=nuxeoCluster
+      - NUXEO_ES_INDEX_NAME=nuxeo
+      - NUXEO_ES_REPLICAS=0
+      - NUXEO_ES_SHARDS=5
+    depends_on:
+      - mongo
+      - redis
+      - elastic1
+      - elastic2
+      - nuxeo-package-conf
+  mongo:
+    image: mongo:3.2
+    ports: ['27017:27017']
+  elastic1:
+    image: elasticsearch:1.5.2
+    entrypoint: ['elasticsearch', '-Des.cluster.name=nuxeoCluster']
+  elastic2:
+    image: elasticsearch:1.5.2
+    entrypoint: ['elasticsearch', '-Des.cluster.name=nuxeoCluster']
+  redis:
+    image: redis:2.8
+    ports: ['6379:6379']
+  nuxeo-package-conf:
+    image: burpee/nuxeo-package-conf:v1

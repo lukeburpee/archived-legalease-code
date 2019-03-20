@@ -1,0 +1,186 @@
+version: '2'
+services:
+  app:
+    image: burpee/app
+    build:
+      context: .
+      dockerfile: zApp.dkr
+    ports:
+      - "3000:3000"
+    environment:
+      - ROOT_URL=http://localhost:3000
+      - MAIL_URL=smtp://admin:password@mail:25
+      - MONGO_URL=mongodb://mongo1:27017,mongo2:27017,mongo3:27017/app?replicaSet=appRS
+      - MONGO_OPLOG_URL=mongodb://mongo1:27017,mongo2:27017,mongo3:27017/local?replicaSet=appRS
+      - METEOR_OFFLINE_CATALOG=1
+    volumes:
+      - ./app:/usr/src/app
+    volumes_from:
+      - node-modules
+    depends_on:
+      - worker
+      - pst-master
+      - mongo1
+      - mongo2
+      - mongo3
+      - elastic1
+      - elastic2
+      - unoconv
+      - tika
+  storybook:
+    image: burpee/storybook
+    build: 
+      context: .
+      dockerfile: zStorybook.dkr
+    ports:
+      - "9001:9001"
+    volumes:
+      - ./app/client:/usr/src/app/client
+      - ./app/public:/usr/src/app/public
+      - ./app/.storybook:/usr/src/app/.storybook
+    volumes_from:
+      - node-modules
+  node-modules:
+    image: burpee/node-modules
+    build:
+      context: .
+      dockerfile: zNode-modules.dkr
+    volumes:
+      - /usr/src/app/node_modules
+      - ./app/.meteor:/usr/src/app/.meteor
+  worker:
+    image: burpee/worker
+    build:
+      context: .
+      dockerfile: zWorker.dkr
+    volumes_from:
+      - node-modules
+  mongo1:
+    image: burpee/mongo
+    hostname: mongo1
+    volumes_from:
+      - mongo-data1
+  mongo2:
+    image: burpee/mongo
+    hostname: mongo2
+    volumes_from:
+      - mongo-data2
+  mongo3:
+    image: burpee/mongo
+    hostname: mongo3
+    volumes_from:
+      - mongo-data3
+  mongo-data1:
+    image: burpee/busybox
+    volumes:
+      - ./app-data/mongo/db1:/data/db
+  mongo-data2:
+    image: burpee/busybox
+    volumes:
+      - ./app-data/mongo/db2:/data/db
+  mongo-data3:
+    image: burpee/busybox
+    volumes:
+      - ./app-data/mongo/db3:/data/db
+  mongo-config:
+    image: burpee/mongo-replicaset-setup
+    build: 
+      dockerfile: zReplicaset-setup.dkr
+      context: .
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+    environment:
+      DATABASE: app
+      REPLICA_SET_ID: appRS
+      PRIMARY_MEMBER: mongo1
+      SECONDARY_MEMBERS: mongo2,mongo3
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+  elastic1:
+    image: elasticsearch:1.5.2
+    ports: 
+     - '9200:9200'
+     - '9300:9300'
+    entrypoint: ['elasticsearch', '-Des.cluster.name=appCL', '-Des.cluster.routing.allocation.disk.threshold_enabled', 'false']
+    volumes_from:
+      - elastic-data1
+  elastic2:
+    image: elasticsearch:1.5.2
+    ports:
+      - '9201:9200'
+      - '9301:9300'
+    entrypoint: ['elasticsearch', '-Des.cluster.name=appCL', '-Des.cluster.routing.allocation.disk.threshold_enabled', 'false']
+    volumes_from:
+      - elastic-data2
+  elastic-data1:
+    image: burpee/busybox
+    volumes:
+      - ./app-data/elastic/elastic1:/usr/share/elasticsearch/data
+  elastic-data2:
+    image: burpee/busybox
+    volumes:
+      - ./app-data/elastic/elastic2:/usr/share/elasticsearch/data
+  unoconv:
+    image: burpee/unoconv-worker
+    build:
+      dockerfile: zUnoconv-worker.dkr
+      context: .
+    volumes_from:
+      - node-modules
+  tika:
+    image: burpee/tika-server
+    build:
+      context: .
+      dockerfile: zTika-server.dkr
+  pst-master:
+    image: burpee/pst-master:latest
+    hostname: pst-master
+    build:
+      context: .
+      dockerfile: zPst_master.dkr
+    environment:
+      - HDFS_USER=root
+    volumes:
+      - /usr/src/app/lib/
+      - /dev/null:/dev/raw1394
+      - ./pst-master:/usr/src/app
+      - ./app-data/pst-extract/pst:/usr/src/app/pst-extract/pst
+      - ./app-data/pst-extract/:/usr/src/app/pst-extract/
+      - ./static-data/MITIE-models:/usr/src/app/MITIE-models
+    volumes_from:
+      - node-modules
+  #webrtc-signal-server:
+  #  image: voduytuan/tc-webrtc-signaling
+  #  environment:
+  #    - DEBUG=socket.io*
+  #  volumes:
+  #    - ./config/webrtc-signal-server/file.pem:/src/certssl/site.pem
+  #mail:
+  #  image: tvial/docker-mailserver
+  #  hostname: mail
+  #  domainname: domain.com
+  #  container_name: mail
+  #  ports:
+  #    - "25:25"
+  #    - "143:143"
+  #    - "587:587"
+  #    - "993:993"
+  #  volumes:
+  #    - ./app-data/maildata:/var/mail
+  #    - ./app-data/mailstate:/var/mail-state
+  #    - ./config/mail-config/:/tmp/docker-mailserver/
+  #  environment:
+  #    - ENABLE_SPAMASSASSIN=1
+  #    - ENABLE_CLAMAV=1
+  #    - ENABLE_FAIL2BAN=1
+  #    - ONE_DIR=1
+  #    - DMS_DEBUG=0
+  #    - MAIL_USER=admin@domain.tld
+  #    - MAIL_PASS=password
+  #  cap_add:
+  #    - NET_ADMIN
+

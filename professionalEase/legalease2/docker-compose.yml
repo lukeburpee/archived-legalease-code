@@ -1,0 +1,180 @@
+version: '2'
+services:
+  app:
+    image: burpee/app
+    build: ./app
+    ports:
+      - "3000:3000"
+    environment:
+      - ROOT_URL=http://localhost:3000
+      - MAIL_URL=smtp://admin:password@mail:25
+      - MONGO_URL=mongodb://mongo1:27017,mongo2:27017,mongo3:27017/app?replicaSet=appRS
+      - MONGO_OPLOG_URL=mongodb://mongo1:27017,mongo2:27017,mongo3:27017/local?replicaSet=appRS
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+      - elastic1
+      - elastic2
+      - unoconv
+      - pst-master
+      - tika
+    volumes:
+      - ./app/:/opt/app
+    volumes_from:
+      - node-modules
+  storybook:
+    image: burpee/storybook
+    build: 
+      context: ./app
+      dockerfile: Dockerfile-storybook
+    ports:
+      - "9001:9001"
+    volumes:
+      - ./app/:/opt/app
+    volumes_from:
+      - node-modules
+  node-modules:
+    image: burpee/node-modules
+    build: ./images/node-modules
+    volumes:
+      - /opt/app/node_modules
+  worker:
+    image: burpee/worker
+    build: ./images/worker
+    depends_on:
+      - app
+      - mongo1
+      - mongo2
+      - mongo3
+      - elastic1
+      - elastic2
+      - unoconv
+      - tika
+  mongo1:
+    image: mongo:3.2
+    command: --smallfiles --replSet appRS --quiet
+    volumes_from:
+      - mongo-data1
+  mongo2:
+    image: mongo:3.2
+    command: --smallfiles --replSet appRS --quiet
+    volumes_from:
+      - mongo-data2
+  mongo3:
+    image: mongo:3.2
+    command: --smallfiles --replSet appRS --quiet
+    volumes_from:
+      - mongo-data3
+  mongo-data1:
+    image: busybox
+    volumes:
+      - ./app-data/mongo/db1:/data/db
+  mongo-data2:
+    image: busybox
+    volumes:
+      - ./app-data/mongo/db2:/data/db
+  mongo-data3:
+    image: busybox
+    volumes:
+      - ./app-data/mongo/db3:/data/db
+  mongo-config:
+    image: burpee/mongo-replicaset-setup
+    build: ./images/mongo-replicaset-setup
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+    environment:
+      DATABASE: app
+      REPLICA_SET_ID: appRS
+      PRIMARY_MEMBER: mongo1:27017
+      SECONDARY_MEMBERS: mongo2:27017,mongo3:27017
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+  elastic1:
+    image: elasticsearch:1.5.2
+    ports: 
+     - '9200:9200'
+     - '9300:9300'
+    entrypoint: ['elasticsearch', '-Des.cluster.name=appCL', '-Des.cluster.routing.allocation.disk.threshold_enabled', 'false']
+    volumes_from:
+      - elastic-data1
+  elastic2:
+    image: elasticsearch:1.5.2
+    ports:
+      - '9201:9200'
+      - '9301:9300'
+    entrypoint: ['elasticsearch', '-Des.cluster.name=appCL', '-Des.cluster.routing.allocation.disk.threshold_enabled', 'false']
+    volumes_from:
+      - elastic-data2
+  elastic-data1:
+    image: busybox
+    volumes:
+      - ./app-data/elastic/elastic1:/usr/share/elasticsearch/data
+  elastic-data2:
+    image: busybox
+    volumes:
+      - ./app-data/elastic/elastic2:/usr/share/elasticsearch/data
+  unoconv:
+    image: burpee/unoconv-worker
+    build: ./images/unoconv-worker
+    ports:
+      - "3121:3121"
+  tika:
+    image: logicalspark/docker-tikaserver
+    ports:
+      - "9998:9998"
+  pst-master:
+    image: burpee/pst-master
+    hostname: pst-master
+    build: ./images/pst-master
+    environment:
+      - HDFS_USER=root
+    ports:
+      - "6000:6000"
+      - "6066:6066"
+      - "7070:7070"
+      - "8080:8080"
+      - "50070:50070"
+    volumes:
+      - /usr/src/app/lib/
+      - ./app-data/pst-extract/pst:/usr/src/app/pst-extract/pst
+      - ./app-data/pst-extract/:/usr/src/app/pst-extract/
+  #corenlp:
+  #  image: motiz88/corenlp
+  #  ports:
+  #    - "9000:9000"
+  #webrtc-signal-server:
+  #  image: voduytuan/tc-webrtc-signaling
+  #  environment:
+  #    - DEBUG=socket.io*
+  #  volumes:
+  #    - ./config/webrtc-signal-server/file.pem:/src/certssl/site.pem
+  #mail:
+  #  image: tvial/docker-mailserver
+  #  hostname: mail
+  #  domainname: domain.com
+  #  container_name: mail
+  #  ports:
+  #    - "25:25"
+  #    - "143:143"
+  #    - "587:587"
+  #    - "993:993"
+  #  volumes:
+  #    - ./app-data/maildata:/var/mail
+  #    - ./app-data/mailstate:/var/mail-state
+  #    - ./config/mail-config/:/tmp/docker-mailserver/
+  #  environment:
+  #    - ENABLE_SPAMASSASSIN=1
+  #    - ENABLE_CLAMAV=1
+  #    - ENABLE_FAIL2BAN=1
+  #    - ONE_DIR=1
+  #    - DMS_DEBUG=0
+  #    - MAIL_USER=admin@domain.tld
+  #    - MAIL_PASS=password
+  #  cap_add:
+  #    - NET_ADMIN
+

@@ -1,0 +1,4 @@
+node_modules
+app/.meteor/dev_bundle
+app/.meteor/local
+Package

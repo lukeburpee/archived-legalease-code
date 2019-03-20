@@ -1,0 +1,12 @@
+FROM burpee/service-base
+
+ENV BUILD_PACKAGES make gcc g++ linux-headers binutils-gold gnupg libstdc++
+
+WORKDIR /usr/src/app
+ADD package.json /usr/src/app/
+
+RUN apk --update --no-cache add $BUILD_PACKAGES && npm install && apk del $BUILD_PACKAGES
+
+VOLUME /usr/src/app/node_modules
+
+CMD /bin/true

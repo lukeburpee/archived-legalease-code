@@ -1,0 +1,15 @@
+{
+  "name": "unoconv-connector",
+  "version": "0.0.1",
+  "description": "ddp connector for unoconv to meteor application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lukeb",
+  "license": "ISC",
+  "dependencies": {
+    "ddp": "^0.12.1",
+    "meteor-job": "^1.4.0"
+  }
+}
