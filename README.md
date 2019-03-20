@@ -14,7 +14,7 @@ Some of these packages are missing dependencies due to the size of the dependenc
 		- ukrainian
 - legalease
 	- open office
-	- dejavue oneview
+	- dejavue oneview (dabbled with this document viewer early on, but ended up moving away from it)
 	- hadoop (easily download from other location)
 
 This package repo also contains c headers that allow you to compile libpst in docker alpine.
